@@ -1,11 +1,11 @@
 {
-	"name": "sliding-Puzzle-server",
+	"name": "extra-hour-deltacode",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
 		"serve": "node --watch index"
 	},
-	"author": "Marvin Cely",
+	"author": "Deltacode",
 	"license": "ISC",
 	"description": "",
 	"dependencies": {

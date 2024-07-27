@@ -1,15 +1,22 @@
-const express = require('express');
-const { getStats, postStats } = require('../apis/stats');
-const { getGameInfo } = require('../apis/gameInfo');
-const { getTipsInfo } = require('../apis/tipInfo')
+const express = require("express");
+const {
+  getExtrahours,
+  putExtrahours,
+  deleteExtrahours,
+  postExtrahours,
+} = require("../apis/extrahours");
+const { getEmployee } = require("../apis/employee");
+const { getExportReport } = require("../apis/report");
 
 const router = express.Router();
 
-router.get('/game-info', getGameInfo);
+router.get("/extra-hour", getExtrahours);
 
-router.get('/stats', getStats);
-router.post('/stats', postStats);
+router.get("/employee-info", getEmployee);
+router.put("/extra-hour", putExtrahours);
+router.delete("/extra-hour", deleteExtrahours);
+router.post("/extra-hour", postExtrahours);
 
-router.get('/tips-info', getTipsInfo); 
+router.get("/report-info", getExportReport);
 
 module.exports = router;
