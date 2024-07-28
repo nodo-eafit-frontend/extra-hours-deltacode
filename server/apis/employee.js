@@ -3,6 +3,8 @@ const { readJsonFile } = require("../utils/json-reader");
 
 const getEmployee = async;
 
+//TODO
+
 module.exports = {
-  getEmployment,
+  getEmployee,
 };
