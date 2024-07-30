@@ -1,16 +1,31 @@
 [
-	
-
-
-
-
-
-
-
-
-
-
-
-
+	{
+		"id": 123456,
+		"name": "Employee x",
+		"position": "Analista nivel 2",
+		"salary": 3246789,
+		"supervisor": "Supervisor y"
+	},
+	{
+		"id": 123457,
+		"name": "Employee x",
+		"position": "Analista nivel 3",
+		"salary": 3246789,
+		"supervisor": "Supervisor y"
+	},
+	{
+		"id": 123458,
+		"name": "Employee x",
+		"position": "Técnico de operaciones",
+		"salary": 3246789,
+		"supervisor": "Supervisor y"
+	},
+	{
+		"id": 123459,
+		"name": "Employee x",
+		"position": "CallCenter nivel 1",
+		"salary": 3246789,
+		"supervisor": "Supervisor y"
+	}	
 	
 ]
