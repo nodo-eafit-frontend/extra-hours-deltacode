@@ -1,16 +1,36 @@
 [
-	
+	{
+		"id": 123456,
+		"name": "Ana María García López",
+		"position": "Analista nivel 2",
+		"salary": 3246789,
+		"supervisor": "Carlos Miguel Pérez Sánchez",
+		"supervisor id": 1
 
-
-
-
-
-
-
-
-
-
-
-
+	},
+	{
+		"id": 123457,
+		"name": "Luis Alberto Rodríguez Fernández",
+		"position": "Analista nivel 3",
+		"salary": 3246789,
+		"supervisor": "Carlos Miguel Pérez Sánchez",
+		"supervisor id": 2
+	},
+	{
+		"id": 123458,
+		"name": "María Isabel López González",
+		"position": "Técnico de operaciones",
+		"salary": 3246789,
+		"supervisor": "Laura Patricia Gómez Torres",
+		"supervisor id": 3
+	},
+	{
+		"id": 123459,
+		"name": "Jorge Andrés Martínez Ruiz",
+		"position": "CallCenter nivel 1",
+		"salary": 3246789,
+		"supervisor": "Laura Patricia Gómez Torres",
+		"supervisor id": 3
+	}	
 	
 ]
