@@ -1,13 +1,19 @@
 require("dotenv").config();
 const { readJsonFile } = require("../utils/json-reader");
-// const employeeInfoJSON = require("../data/employee-info.json");
+//const employeeInfoJSON = require("../data/employee-info.json");
 
 const getEmployee = async (request, response) => {
+  const id = Number(request.params.id);
   try {
-    const employeeInfoJSON = await readJsonFile(
-      process.env.JSON_DIR_EMPLOYEE_INFO
-    );
-    response.status(200).send(employeeInfoJSON);
+    let employeeInfoJSON = [];
+
+    employeeInfoJSON = await readJsonFile(process.env.JSON_DIR_EMPLOYEE_INFO);
+
+    const employyeFound = employeeInfoJSON.find((employee) => {
+      return employee.id === id;
+    });
+
+    response.status(200).send(employyeFound);
   } catch (error) {
     response.status(400);
   }
