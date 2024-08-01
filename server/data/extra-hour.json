@@ -2,22 +2,22 @@
     {
         "employeeId": 123456,
         "date": "2-07-2024",
-        "hours": 3
+        "extraHours": 3
     },
     {
         "employeeId": 123456,
         "date": "22-07-2024",
-        "hours": 2
+        "extraHours": 2
     },
     {
         "employeeId": 123456,
         "date": "29-07-2024",
-        "hours": 1
+        "extraHours": 1
     },
     {
         "employeeId": 123456,
         "date": "30-07-2024",
-        "hours": 4
+        "extraHours": 4
     }
 
 ]
