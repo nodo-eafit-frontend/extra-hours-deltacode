@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { readJsonFile } = require("../utils/json-reader");
-const employeeInfoJSON = require("../data/employee-info.json");
+// const employeeInfoJSON = require("../data/employee-info.json");
 
 const getEmployee = async (request, response) => {
   try {

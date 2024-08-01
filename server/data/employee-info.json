@@ -1,31 +1,36 @@
 [
 	{
 		"id": 123456,
-		"name": "Employee x",
+		"name": "Ana María García López",
 		"position": "Analista nivel 2",
 		"salary": 3246789,
-		"supervisor": "Supervisor y"
+		"supervisor": "Carlos Miguel Pérez Sánchez",
+		"supervisor id": 1
+
 	},
 	{
 		"id": 123457,
-		"name": "Employee x",
+		"name": "Luis Alberto Rodríguez Fernández",
 		"position": "Analista nivel 3",
 		"salary": 3246789,
-		"supervisor": "Supervisor y"
+		"supervisor": "Carlos Miguel Pérez Sánchez",
+		"supervisor id": 2
 	},
 	{
 		"id": 123458,
-		"name": "Employee x",
+		"name": "María Isabel López González",
 		"position": "Técnico de operaciones",
 		"salary": 3246789,
-		"supervisor": "Supervisor y"
+		"supervisor": "Laura Patricia Gómez Torres",
+		"supervisor id": 3
 	},
 	{
 		"id": 123459,
-		"name": "Employee x",
+		"name": "Jorge Andrés Martínez Ruiz",
 		"position": "CallCenter nivel 1",
 		"salary": 3246789,
-		"supervisor": "Supervisor y"
+		"supervisor": "Laura Patricia Gómez Torres",
+		"supervisor id": 3
 	}	
 	
 ]
