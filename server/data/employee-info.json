@@ -6,7 +6,6 @@
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
 		"supervisor id": 1
-
 	},
 	{
 		"id": 123457,
@@ -14,7 +13,7 @@
 		"position": "Analista nivel 3",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisor id": 2
+		"supervisorId": 2
 	},
 	{
 		"id": 123458,
@@ -31,6 +30,5 @@
 		"salary": 3246789,
 		"supervisor": "Laura Patricia Gómez Torres",
 		"supervisor id": 3
-	}	
-	
+	}
 ]

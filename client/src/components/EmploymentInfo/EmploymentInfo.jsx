@@ -1,12 +1,27 @@
-import Button from '@mui/material/Button';
-import { TextField } from '@mui/material';
+import { Input, Space } from 'antd';
+import { useState } from 'react';
+const { Search } = Input;
+
+import { Description } from '../Description/Description';
 
 export const EmploymentInfo = () => {
-   return(
-    <>
-        <TextField id="standard-basic" label= "Cedula" variant="standard"/>
-        <h4>Empleado</h4>
-        <span>Nombre</span>
-    </>
-   );
+	const [employee, setEmployee] = useState({});
+
+	const onSearch = async (value) => {
+		console.log(value);
+
+		const response = await fetch(`http://localhost:4000/employee-info/${value}`);
+		const data = await response.json();
+
+		console.log(data);
+		setEmployee(data);
+	};
+
+	return (
+		<>
+			<Search placeholder="Cédula" onSearch={onSearch} />
+			<Description title={'Empleado'} description={employee.name} />
+			<Description title={'Salario'} description={employee.salary} />
+		</>
+	);
 };

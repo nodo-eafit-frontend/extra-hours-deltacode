@@ -2,6 +2,8 @@ require('dotenv').config();
 const { readJsonFile } = require('../utils/json-reader');
 //const employeeInfoJSON = require("../data/employee-info.json");
 
+const { formatCurrency } = require('../utils/format-currency');
+
 const getEmployee = async (request, response) => {
 	const id = Number(request.params.id);
 	try {
@@ -16,6 +18,8 @@ const getEmployee = async (request, response) => {
 		if (!employyeFound) {
 			throw new Error('Emplyee not Found');
 		}
+
+		employyeFound.salary = formatCurrency(employyeFound.salary);
 
 		response.status(200).send(employyeFound);
 	} catch (error) {
