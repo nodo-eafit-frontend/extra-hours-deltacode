@@ -1,5 +1,3 @@
-const { response } = require("express");
-const { readJsonFile } = require("../utils/json-reader");
 const ExcelJS = require("exceljs");
 
 const getExportReport = async (request, response) => {

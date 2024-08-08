@@ -1,9 +1,12 @@
 import './App.scss';
 import { EmploymentInfo } from './components/EmploymentInfo/EmploymentInfo';
 
+
+
 function App() {
-  return (<EmploymentInfo />
-  )
+  return (
+  <EmploymentInfo />
+  );
 }
 
 export default App
