@@ -1,29 +1,38 @@
 import { Input, Space } from 'antd';
 import { useState } from 'react';
 const { Search } = Input;
-
-import { Description } from '../Description/Description';
+import { Description } from '@components';
+import { findEmployee } from '@services/findEmployee';
 
 export const EmploymentInfo = () => {
 	const [employee, setEmployee] = useState({});
+	const [notFound, setNotFound] = useState();
 
-	const onSearch = async (value) => {
-		console.log(value);
+	const onSearch = async (id) => {
+		try {
+			const data = await findEmployee(id);
 
-		const response = await fetch(`http://localhost:4000/employee-info/${value}`);
-		const data = await response.json();
-
-		console.log(data);
-		setEmployee(data);
+			setEmployee(data);
+			setNotFound(false);
+		} catch (error) {
+			console.error(error);
+			setNotFound(true);
+			setEmployee({});
+		}
 	};
 
 	return (
 		<>
 			<Search placeholder="Cédula" onSearch={onSearch} />
-			<Description title={'Empleado'} description={employee.name} />
-			<Description title={'Salario'} description={employee.salary} />
-			<Description title={'Cargo'} description={employee.position} />
-			<Description title={'Supervisor'} description={employee.supervisor} />
+			{notFound && <span>Empleado no encontrado, intente con otra cédula</span>}
+			{!!Object.keys(employee).length && (
+				<>
+					<Description title={'Empleado'} description={employee.name} />
+					<Description title={'Salario'} description={employee.salary} />
+					<Description title={'Cargo'} description={employee.position} />
+					<Description title={'Supervisor'} description={employee.supervisor} />
+				</>
+			)}
 		</>
 	);
 };
