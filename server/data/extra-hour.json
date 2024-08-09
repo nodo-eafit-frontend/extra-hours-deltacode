@@ -1,23 +1,51 @@
 [
     {
+        "id": 1,
         "employeeId": 123456,
         "date": "2-07-2024",
-        "extraHours": 3
+        "extraHours": {
+            "diurnal": 0.25,
+            "nocturnal": 0.75,
+            "diurnalHollyday": 1,
+            "nocturnalHollyday": 1.5
+        },
+        "horasMes": 350
     },
     {
+        "id": 2,
         "employeeId": 123456,
         "date": "22-07-2024",
-        "extraHours": 2
+       "extraHours": {
+            "diurnal": 0.25,
+            "nocturnal": 0.75,
+            "diurnalHollyday": 1,
+            "nocturnalHollyday": 1.5
+        },
+        "horasMes": 350
     },
     {
+        "id": 3,
         "employeeId": 123456,
         "date": "29-07-2024",
-        "extraHours": 1
+       "extraHours": {
+            "diurnal": 0.25,
+            "nocturnal": 0.75,
+            "diurnalHollyday": 1,
+            "nocturnalHollyday": 1.5
+        },
+        "horasMes": 350
     },
     {
+        "id": 4,
         "employeeId": 123456,
         "date": "30-07-2024",
-        "extraHours": 4
+       "extraHours": {
+            "diurnal": 0.25,
+            "nocturnal": 0.75,
+            "diurnalHollyday": 1,
+            "nocturnalHollyday": 1.5
+        },
+        "horasMes": 350
     }
 
 ]

@@ -5,7 +5,7 @@
 		"position": "Analista nivel 2",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisor id": 1
+		"supervisor_id": 1
 	},
 	{
 		"id": 123457,
@@ -13,7 +13,7 @@
 		"position": "Analista nivel 3",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisorId": 2
+		"supervisor_id": 2
 	},
 	{
 		"id": 123458,
@@ -21,7 +21,7 @@
 		"position": "Técnico de operaciones",
 		"salary": 3246789,
 		"supervisor": "Laura Patricia Gómez Torres",
-		"supervisor id": 3
+		"supervisor_id": 3
 	},
 	{
 		"id": 123459,
@@ -29,6 +29,6 @@
 		"position": "CallCenter nivel 1",
 		"salary": 3246789,
 		"supervisor": "Laura Patricia Gómez Torres",
-		"supervisor id": 3
+		"supervisor_id": 3
 	}
 ]

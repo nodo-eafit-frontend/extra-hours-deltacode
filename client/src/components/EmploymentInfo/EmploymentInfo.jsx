@@ -22,6 +22,8 @@ export const EmploymentInfo = () => {
 			<Search placeholder="Cédula" onSearch={onSearch} />
 			<Description title={'Empleado'} description={employee.name} />
 			<Description title={'Salario'} description={employee.salary} />
+			<Description title={'Cargo'} description={employee.position} />
+			<Description title={'Supervisor'} description={employee.supervisor} />
 		</>
 	);
 };
