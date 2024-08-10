@@ -1,8 +1,15 @@
 import './App.scss';
 import { EmploymentInfo } from '@components';
+import { DatePicker } from "antd";
 
 function App() {
-	return <EmploymentInfo />;
+	
+	return (
+		<>
+		  <DatePicker />
+		  <EmploymentInfo />
+		</>
+	)
 }
 
 export default App;
