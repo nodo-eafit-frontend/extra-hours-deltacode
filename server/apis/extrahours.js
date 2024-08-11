@@ -5,7 +5,7 @@ const { readJsonFile, updateJsonFile } = require("../utils/json-reader");
 const getExtrahours = async (request, response) => {
   try {
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
-    response.status(200).json(data);
+    response.status(200).send(data);
   } catch (error) {
     response.status(500).json({ message: "Error al obtener las horas extra" });
   }
