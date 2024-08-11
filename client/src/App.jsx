@@ -1,5 +1,5 @@
 import './App.scss';
-import { EmploymentInfo } from '@components';
+import { EmployeeInfo } from '@components';
 import { DatePicker } from "antd";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 	return (
 		<>
 		  <DatePicker />
-		  <EmploymentInfo />
+		  <EmployeeInfo />
 		</>
 	)
 }

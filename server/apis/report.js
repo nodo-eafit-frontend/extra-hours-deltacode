@@ -4,7 +4,7 @@ const getExportReport = async (request, response) => {
   try {
     let tasks = [
       {
-        id: 23456,
+        id: 123456,
         name: "Ana María García López",
         position: "Analista nivel 2",
         extraHours: 3,
@@ -44,14 +44,7 @@ async function generateXLS(data) {
     let rowIndex = 1;
 
     let row = worksheet.getRow(rowIndex);
-    row.values = [
-      "Task # id",
-      "Name",
-      "Position",
-      "Task # extraHours",
-      "Date",
-      "Supervisor",
-    ];
+    row.values = ["ID", "Name", "Position", "ExtraHours", "Date", "Supervisor"];
     row.font = { bold: true };
 
     const columnWidths = [20, 30, 30, 20, 20, 30];
@@ -63,15 +56,15 @@ async function generateXLS(data) {
     // Loop over the grouped data
     data.forEach((task, index) => {
       const row = worksheet.getRow(rowIndex + index + 1);
-      row.getCell("A").value = task.id;
-      row.getCell("B").value = task.name;
-      row.getCell("C").value = task.position;
-      row.getCell("D").value = task.extraHours;
-      row.getCell("E").value = new Date(task.date);
-      row.getCell("F").value = task.supervisor;
+      row.getCell(1).value = task.id;
+      row.getCell(2).value = task.name;
+      row.getCell(3).value = task.position;
+      row.getCell(4).value = task.extraHours;
+      row.getCell(5).value = new Date(task.date);
+      row.getCell(6).value = task.supervisor;
 
-      row.getCell("B").alignment = { wrapText: true };
-      row.getCell("F").alignment = { wrapText: true };
+      row.getCell(2).alignment = { wrapText: true };
+      row.getCell(6).alignment = { wrapText: true };
     });
 
     worksheet.getRow(1).height = 40;
@@ -98,6 +91,7 @@ async function generateXLS(data) {
     return workbook.xlsx.writeBuffer();
   } catch (err) {
     console.log(err);
+    throw new Error("Error generating XLS file");
   }
 }
 

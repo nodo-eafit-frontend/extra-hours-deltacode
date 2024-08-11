@@ -4,13 +4,13 @@ const { Search } = Input;
 import { Description } from '@components';
 import { findEmployee } from '@services/findEmployee';
 
-export const EmploymentInfo = () => {
+export const EmployeeInfo = () => {
 	const [employee, setEmployee] = useState({});
 	const [notFound, setNotFound] = useState();
 
-	const onSearch = async (id) => {
+	const onSearch = async (employeeId) => {
 		try {
-			const data = await findEmployee(id);
+			const data = await findEmployee(employeeId);
 
 			setEmployee(data);
 			setNotFound(false);
