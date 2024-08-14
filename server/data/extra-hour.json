@@ -58,5 +58,17 @@
     "employeeId": 123456,
     "hours": 7,
     "date": "2024-08-11"
+  },
+  {
+    "id": 7,
+    "employeeId": 123456,
+    "date": "2024-08-11",
+    "extraHours": {
+      "diurnal": 1,
+      "nocturnal": 2,
+      "diurnalHollyday": 1,
+      "nocturnalHollyday": 2
+    },
+    "horasMes": 200
   }
 ]
