@@ -58,11 +58,22 @@ const postExtrahours = async (request, response) => {
   try {
     const { body } = request;
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
-    data.push(body);
 
-    updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
-    response.status(201);
+    // Asignar un nuevo ID basado en el ID más alto existente
+    const newId =
+      data.length > 0 ? Math.max(...data.map((item) => item.id || 0)) + 1 : 1;
+    const newExtraHour = { id: newId, ...body };
+
+    // Agregar el nuevo registro al arreglo
+    data.push(newExtraHour);
+
+    // Actualizar el archivo JSON con la nueva hora extra
+    await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
+
+    // Enviar la respuesta con el nuevo registro
+    response.status(201).json(newExtraHour);
   } catch (error) {
+    console.error("Error al procesar la solicitud POST:", error.message);
     response
       .status(500)
       .json({ message: "Error al agregar la nueva hora extra" });

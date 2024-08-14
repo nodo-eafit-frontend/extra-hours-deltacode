@@ -1,38 +1,38 @@
-import { Input, Space } from 'antd';
-import { useState } from 'react';
+import { Input, Space } from "antd";
+import { useState } from "react";
 const { Search } = Input;
-import { Description } from '@components';
-import { findEmployee } from '@services/findEmployee';
+import { Description } from "@components";
+import { findEmployee } from "@services/findEmployee";
 
 export const EmploymentInfo = () => {
-	const [employee, setEmployee] = useState({});
-	const [notFound, setNotFound] = useState();
+  const [employee, setEmployee] = useState({});
+  const [notFound, setNotFound] = useState();
 
-	const onSearch = async (id) => {
-		try {
-			const data = await findEmployee(id);
+  const onSearch = async (id) => {
+    try {
+      const data = await findEmployee(id);
 
-			setEmployee(data);
-			setNotFound(false);
-		} catch (error) {
-			console.error(error);
-			setNotFound(true);
-			setEmployee({});
-		}
-	};
+      setEmployee(data);
+      setNotFound(false);
+    } catch (error) {
+      console.error(error);
+      setNotFound(true);
+      setEmployee({});
+    }
+  };
 
-	return (
-		<>
-			<Search placeholder="Cédula" onSearch={onSearch} />
-			{notFound && <span>Empleado no encontrado, intente con otra cédula</span>}
-			{!!Object.keys(employee).length && (
-				<>
-					<Description title={'Empleado'} description={employee.name} />
-					<Description title={'Salario'} description={employee.salary} />
-					<Description title={'Cargo'} description={employee.position} />
-					<Description title={'Supervisor'} description={employee.supervisor} />
-				</>
-			)}
-		</>
-	);
+  return (
+    <>
+      <Search placeholder="Cédula" onSearch={onSearch} />
+      {notFound && <span>Empleado no encontrado, intente con otra cédula</span>}
+      {!!Object.keys(employee).length && (
+        <>
+          <Description title={"Empleado"} description={employee.name} />
+          <Description title={"Salario"} description={employee.salary} />
+          <Description title={"Cargo"} description={employee.position} />
+          <Description title={"Supervisor"} description={employee.supervisor} />
+        </>
+      )}
+    </>
+  );
 };

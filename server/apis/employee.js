@@ -14,7 +14,7 @@ const getEmployee = async (request, response) => {
     });
 
     if (!employyeFound) {
-      throw new Error("Emplyee not Found");
+      throw new Error("Employee not Found");
     }
 
     employyeFound.salary = formatCurrency(employyeFound.salary);
