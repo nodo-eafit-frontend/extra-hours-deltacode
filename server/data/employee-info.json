@@ -5,7 +5,7 @@
 		"position": "Analista nivel 2",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisor_id": 1
+		"supervisorId": 1
 	},
 	{
 		"id": 123457,
@@ -13,7 +13,7 @@
 		"position": "Analista nivel 3",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisor_id": 2
+		"supervisorId": 2
 	},
 	{
 		"id": 123458,
@@ -21,7 +21,7 @@
 		"position": "Técnico de operaciones",
 		"salary": 3246789,
 		"supervisor": "Laura Patricia Gómez Torres",
-		"supervisor_id": 3
+		"supervisorId": 3
 	},
 	{
 		"id": 123459,
@@ -29,6 +29,46 @@
 		"position": "CallCenter nivel 1",
 		"salary": 3246789,
 		"supervisor": "Laura Patricia Gómez Torres",
-		"supervisor_id": 3
+		"supervisorId": 3
+	},
+	{
+        "id": 123460,
+        "name": "Carlos Alberto Hernández López",
+        "position": "Analista de datos",
+        "salary": 4567890,
+        "supervisor": "María Fernanda Sánchez Morales",
+        "supervisorId": 7
+    },
+    {
+        "id": 123461,
+        "name": "Ana Isabel Rodríguez Pérez",
+        "position": "Desarrolladora de software",
+        "salary": 5234789,
+        "supervisor": "Luis Javier Fernández Gutiérrez",
+        "supervisorId": 8
+    },
+    {
+        "id": 123462,
+        "name": "Miguel Ángel Torres Jiménez",
+        "position": "Gerente de proyectos",
+        "salary": 7891234,
+        "supervisor": "Paula Andrea Ramírez Quintana",
+        "supervisorId": 5
+    },
+    {
+        "id": 123462,
+        "name": "Laura Marcela Ortiz Mejía",
+        "position": "Especialista en marketing",
+        "salary": 4678912,
+        "supervisor": "Juan Camilo Herrera Vásquez",
+        "supervisorId": 2
+    },
+    {
+        "id": 123460,
+        "name": "Diego Alejandro Vargas Ríos",
+        "position": "Consultor financiero",
+        "salary": 6345678,
+        "supervisor": "Sofía Beatriz Castro León",
+        "supervisorId": 4
 	}
 ]
