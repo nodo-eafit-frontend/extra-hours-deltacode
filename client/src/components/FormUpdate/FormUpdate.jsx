@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./FormExtraHour.scss";
+import "./FormUpdate.scss";
 
-export const FormExtraHour = () => {
+export const FormUpdate = () => {
   const [extraHours, setExtraHours] = useState({
     registry: "",
     id: "",
@@ -52,25 +52,28 @@ export const FormExtraHour = () => {
     setError(null);
 
     try {
-      const registry = Date.now() % 1000000;
-      const body = { ...extraHours, registry };
+      const { registry, ...body } = extraHours;
 
-      // const response = await fetch("/extrahours", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(body),
-      // });
+      if (!registry) {
+        throw new Error("No se ha proporcionado un registro para actualizar");
+      }
 
-      // if (!response.ok) {
-      //   throw new Error("Error al enviar el formulario");
-      // }
+      const response = await fetch(`/extrahours/$(registry)`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
 
-      // const data = await response.json();
-      // console.log("Formulario enviado correctamente:", data);
+      if (!response.ok) {
+        throw new Error("Error al actualizar los datos");
+      }
 
-      console.log("Enviando datos", body);
+      const data = await response.json();
+      console.log("Datos actualizados correctamente:", data);
+
+      // console.log("Enviando datos", body);
 
       setExtraHours({
         registry: "",
@@ -153,7 +156,7 @@ export const FormExtraHour = () => {
         />
       </div>
       <button type="submit" disabled={loading}>
-        {loading ? "Enviando..." : "Agregar"}
+        {loading ? "Actualizando..." : "Actualizar"}
       </button>
     </form>
   );

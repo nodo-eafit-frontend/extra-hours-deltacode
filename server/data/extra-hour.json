@@ -1,51 +1,56 @@
 [
     {
-        "id": 1,
-        "employeeId": 123456,
+        "registry": 1,
+        "id": 123456,
         "date": "2-07-2024",
         "extraHours": {
             "diurnal": 0.25,
             "nocturnal": 0.75,
             "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5
+            "nocturnalHollyday": 1.5,
+            "extrasHours": 3.5
         },
-        "horasMes": 350
+        "observations": "Reunión equipo"
+        
     },
     {
-        "id": 2,
-        "employeeId": 123456,
+        "registry": 2,
+        "id": 123456,
         "date": "22-07-2024",
        "extraHours": {
             "diurnal": 0.25,
             "nocturnal": 0.75,
             "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5
+            "nocturnalHollyday": 1.5,
+            "extrasHours": 3.5
         },
-        "horasMes": 350
+        "observations": "Reunión equipo"
     },
     {
-        "id": 3,
-        "employeeId": 123456,
+        "registry": 3,
+        "id": 123456,
         "date": "29-07-2024",
        "extraHours": {
             "diurnal": 0.25,
             "nocturnal": 0.75,
             "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5
+            "nocturnalHollyday": 1.5,
+            "extrasHours": 3.5
         },
-        "horasMes": 350
+        "observations": "Reunión equipo"
     },
     {
-        "id": 4,
-        "employeeId": 123456,
+        "registry": 4,
+        "id": 123456,
         "date": "30-07-2024",
        "extraHours": {
             "diurnal": 0.25,
             "nocturnal": 0.75,
             "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5
+            "nocturnalHollyday": 1.5,
+            "extrasHours": 3.5
         },
-        "horasMes": 350
+        "observations": "Reunión equipo"
     }
 
 ]
