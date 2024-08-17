@@ -67,7 +67,7 @@ const postExtrahours = async (request, response) => {
     }
 
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
-    data.push(body);
+
 
     await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
 
@@ -76,6 +76,7 @@ const postExtrahours = async (request, response) => {
       .json({ message: "Horas extras agregadas correctamente" });
   } catch (error) {
     console.error(error);
+
     response
       .status(500)
       .json({ message: "Error interno del seervidor", details: error.message });
