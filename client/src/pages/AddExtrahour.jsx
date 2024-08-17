@@ -7,7 +7,7 @@ const AddExtrahour = () => {
   return (
     <>
       <h2>Agregar horas extra</h2>
-      <EmployeeInfo />
+      {/* <EmployeeInfo /> */}
       <FormExtraHour />
     </>
   );

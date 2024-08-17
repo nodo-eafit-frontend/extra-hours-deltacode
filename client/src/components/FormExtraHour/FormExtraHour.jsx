@@ -1,23 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { addExtraHour } from "@services/addExtraHour";
+import { EmployeeInfo } from "../EmployeeInfo/EmployeeInfo";
 import "./FormExtraHour.scss";
+import { findEmployee } from "../../services/findEmployee";
 
 export const FormExtraHour = () => {
   const [extraHours, setExtraHours] = useState({
     registry: "",
     id: "",
     date: "",
-    extraHours: {
-      diurnal: "",
-      nocturnal: "",
-      diurnalHollyday: "",
-      nocturnalHollyday: "",
-      extrasHours: "",
-    },
+    diurnal: "0",
+    nocturnal: "0",
+    diurnalHoliday: "0",
+    nocturnalHoliday: "0",
+    extrasHours: 0,
     observations: "",
   });
 
+  const [employee, setEmployee] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleIdChange = async (id) => {
+    setExtraHours((prevData) => ({ ...prevData, id }));
+
+    if (id) {
+      try {
+        const employeeData = await findEmployee(id);
+        setEmployee(employeeData);
+        setError(null);
+      } catch (err) {
+        setError("No se pudo encontrar el empleado");
+        setEmployee(null);
+      }
+    } else {
+      setEmployee(null);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,22 +47,22 @@ export const FormExtraHour = () => {
   };
 
   useEffect(() => {
-    const { diurnal, nocturnal, diurnalHollyday, nocturnalHollyday } =
-      extraHours;
+    const { diurnal, nocturnal, diurnalHoliday, nocturnalHoliday } = extraHours;
     const sumExtraHours =
-      (parseInt(diurnal) || 0) +
-      (parseInt(nocturnal) || 0) +
-      (parseInt(diurnalHollyday) || 0) +
-      (parseInt(nocturnalHollyday) || 0);
+      (parseFloat(diurnal, 10) || 0) +
+      (parseFloat(nocturnal, 10) || 0) +
+      (parseFloat(diurnalHoliday, 10) || 0) +
+      (parseFloat(nocturnalHoliday, 10) || 0);
+
     setExtraHours((prevData) => ({
       ...prevData,
-      extrasHours: sumExtraHours,
+      extrasHours: sumExtraHours.toFixed(2),
     }));
   }, [
     extraHours.diurnal,
     extraHours.nocturnal,
-    extraHours.diurnalHollyday,
-    extraHours.nocturnalHollyday,
+    extraHours.diurnalHoliday,
+    extraHours.nocturnalHoliday,
   ]);
 
   const handleSubmit = async (e) => {
@@ -51,51 +70,39 @@ export const FormExtraHour = () => {
     setLoading(true);
     setError(null);
 
+    const registry = Date.now() % 1_000_000;
+    const body = {
+      ...extraHours,
+      registry,
+    };
+    console.log("Datos enviados:", body);
+
     try {
-      const registry = Date.now() % 1000000;
-      const body = { ...extraHours, registry };
-
-      // const response = await fetch("/extrahours", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(body),
-      // });
-
-      // if (!response.ok) {
-      //   throw new Error("Error al enviar el formulario");
-      // }
-
-      // const data = await response.json();
-      // console.log("Formulario enviado correctamente:", data);
-
-      console.log("Enviando datos", body);
+      await addExtraHour(body);
 
       setExtraHours({
         registry: "",
         id: "",
         date: "",
-        extraHours: {
-          diurnal: "",
-          nocturnal: "",
-          diurnalHollyday: "",
-          nocturnalHollyday: "",
-          extrasHours: 0,
-        },
+        diurnal: "0",
+        nocturnal: "0",
+        diurnalHoliday: "0",
+        nocturnalHoliday: "0",
+        extrasHours: 0,
         observations: "",
       });
+
+      setEmployee(null);
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
     }
-
-    e.target.reset();
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <EmployeeInfo onIdChange={handleIdChange} />
       <div>
         <label htmlFor="date"></label>
         <input
@@ -113,6 +120,7 @@ export const FormExtraHour = () => {
           name="diurnal"
           value={extraHours.diurnal}
           onChange={handleChange}
+          step="0.01"
         />
         <label>Nocturna</label>
         <input
@@ -120,20 +128,23 @@ export const FormExtraHour = () => {
           name="nocturnal"
           value={extraHours.nocturnal}
           onChange={handleChange}
+          step="0.01"
         />
         <label>Diurna Festiva</label>
         <input
           type="number"
-          name="diurnalHollyday"
-          value={extraHours.diurnalHollyday}
+          name="diurnalHoliday"
+          value={extraHours.diurnalHoliday}
           onChange={handleChange}
+          step="0.01"
         />
         <label>Nocturna festiva</label>
         <input
           type="number"
-          name="nocturnalHollyday"
-          value={extraHours.nocturnalHollyday}
+          name="nocturnalHoliday"
+          value={extraHours.nocturnalHoliday}
           onChange={handleChange}
+          step="0.01"
         />
         <label>Horas extra</label>
         <input
@@ -155,6 +166,7 @@ export const FormExtraHour = () => {
       <button type="submit" disabled={loading}>
         {loading ? "Enviando..." : "Agregar"}
       </button>
+      {error && <p>Error: {error}</p>}
     </form>
   );
 };

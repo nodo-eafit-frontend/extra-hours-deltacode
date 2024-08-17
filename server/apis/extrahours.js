@@ -58,6 +58,8 @@ const postExtrahours = async (request, response) => {
   try {
     const { body } = request;
 
+    console.log("datos recibidos:", body);
+
     if (!body.id || !body.date || !body.extraHours) {
       return response
         .status(400)

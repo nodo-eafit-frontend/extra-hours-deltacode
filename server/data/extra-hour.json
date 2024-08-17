@@ -3,13 +3,11 @@
         "registry": 1,
         "id": 123456,
         "date": "2-07-2024",
-        "extraHours": {
-            "diurnal": 0.25,
-            "nocturnal": 0.75,
-            "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5,
-            "extrasHours": 3.5
-        },
+        "diurnal": 0.25,
+        "nocturnal": 0.75,
+        "diurnalHoliyday": 1,
+        "nocturnalHoliyday": 1.5,
+        "extrasHours": 3.5,
         "observations": "Reunión equipo"
         
     },
@@ -52,5 +50,6 @@
         },
         "observations": "Reunión equipo"
     }
+   
 
 ]
