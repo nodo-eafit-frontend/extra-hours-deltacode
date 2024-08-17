@@ -1,11 +1,10 @@
-import { Input, Space } from "antd";
+import { Input } from "antd";
 import { useState } from "react";
 import "./EmployeeInfo.scss";
 const { Search } = Input;
-import { Description } from "@components";
 import { findEmployee } from "@services/findEmployee";
 
-export const EmployeeInfo = () => {
+export const EmployeeInfo = ({ onIdChange }) => {
   const [employee, setEmployee] = useState({});
   const [notFound, setNotFound] = useState();
 
@@ -15,6 +14,7 @@ export const EmployeeInfo = () => {
 
       setEmployee(data);
       setNotFound(false);
+      onIdChange(employeeId);
     } catch (error) {
       console.error(error);
       setNotFound(true);
