@@ -9,11 +9,14 @@ export const EmployeeInfo = ({ onIdChange }) => {
   const [notFound, setNotFound] = useState();
 
   const onSearch = async (employeeId) => {
+    console.log("onSearch called with employeeId:", employeeId);
+
     try {
       const data = await findEmployee(employeeId);
 
       setEmployee(data);
       setNotFound(false);
+      console.log("Calling onIdChange with employeeId:", employeeId);
       onIdChange(employeeId);
     } catch (error) {
       console.error(error);

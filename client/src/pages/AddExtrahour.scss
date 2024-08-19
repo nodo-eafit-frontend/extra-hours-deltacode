@@ -2,3 +2,23 @@ h2 {
   color: black;
   text-align: center;
 }
+
+.page__header {
+  padding-block: 1rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  img {
+    width: 10rem;
+    margin-inline: 1rem;
+  }
+}
+
+.heading {
+  font-size: 12px;
+  color: black;
+  margin-top: 2px;
+  font-family: sans-serif;
+}

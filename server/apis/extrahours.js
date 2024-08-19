@@ -60,15 +60,16 @@ const postExtrahours = async (request, response) => {
 
     console.log("datos recibidos:", body);
 
-    if (!body.id || !body.date || !body.extraHours) {
-      return response
-        .status(400)
-        .json({ message: "Campos requeridos faltantes" });
-    }
+    // if (!body.id || !body.date || !body.extraHours) {
+    //   return response
+    //     .status(400)
+    //     .json({ message: "Campos requeridos faltantes" });
+    // }
 
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
 
-
+    await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
+    data.push(body);
     await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
 
     response

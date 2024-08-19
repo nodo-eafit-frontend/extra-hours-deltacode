@@ -1,55 +1,299 @@
 [
-    {
-        "registry": 1,
-        "id": 123456,
-        "date": "2-07-2024",
-        "diurnal": 0.25,
-        "nocturnal": 0.75,
-        "diurnalHoliyday": 1,
-        "nocturnalHoliyday": 1.5,
-        "extrasHours": 3.5,
-        "observations": "Reunión equipo"
-        
-    },
-    {
-        "registry": 2,
-        "id": 123456,
-        "date": "22-07-2024",
-       "extraHours": {
-            "diurnal": 0.25,
-            "nocturnal": 0.75,
-            "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5,
-            "extrasHours": 3.5
-        },
-        "observations": "Reunión equipo"
-    },
-    {
-        "registry": 3,
-        "id": 123456,
-        "date": "29-07-2024",
-       "extraHours": {
-            "diurnal": 0.25,
-            "nocturnal": 0.75,
-            "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5,
-            "extrasHours": 3.5
-        },
-        "observations": "Reunión equipo"
-    },
-    {
-        "registry": 4,
-        "id": 123456,
-        "date": "30-07-2024",
-       "extraHours": {
-            "diurnal": 0.25,
-            "nocturnal": 0.75,
-            "diurnalHollyday": 1,
-            "nocturnalHollyday": 1.5,
-            "extrasHours": 3.5
-        },
-        "observations": "Reunión equipo"
-    }
-   
-
+  {
+    "registry": 1,
+    "id": 123456,
+    "date": "2-07-2024",
+    "diurnal": 0.25,
+    "nocturnal": 0.75,
+    "diurnalHoliyday": 1,
+    "nocturnalHoliyday": 1.5,
+    "extrasHours": 3.5,
+    "observations": "Reunión equipo"
+  },
+  {
+    "registry": 1,
+    "id": 123456,
+    "date": "2-07-2024",
+    "diurnal": 0.25,
+    "nocturnal": 0.75,
+    "diurnalHoliyday": 1,
+    "nocturnalHoliyday": 1.5,
+    "extrasHours": 3.5,
+    "observations": "Reunión equipo"
+  },
+  {
+    "registry": 1,
+    "id": 123456,
+    "date": "2-07-2024",
+    "diurnal": 0.25,
+    "nocturnal": 0.75,
+    "diurnalHoliyday": 1,
+    "nocturnalHoliyday": 1.5,
+    "extrasHours": 3.5,
+    "observations": "Reunión equipo"
+  },
+  {
+    "registry": 1,
+    "id": 123456,
+    "date": "2-07-2024",
+    "diurnal": 0.25,
+    "nocturnal": 0.75,
+    "diurnalHoliyday": 1,
+    "nocturnalHoliyday": 1.5,
+    "extrasHours": 3.5,
+    "observations": "Reunión equipo"
+  },
+  {
+    "registry": 244801,
+    "id": "123460",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1.5",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.50",
+    "observations": "Corregir fallos"
+  },
+  {
+    "registry": 44819,
+    "id": "123461",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": "Mejorando código"
+  },
+  {
+    "registry": 176407,
+    "id": "123461",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1.5",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.50",
+    "observations": "Mejorar código"
+  },
+  {
+    "registry": 340552,
+    "id": "123461",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "2",
+    "nocturnalHoliday": 0,
+    "extrasHours": "2.00",
+    "observations": "Corrigiendo fallos"
+  },
+  {
+    "registry": 396901,
+    "id": "123461",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": "Corregir fallos"
+  },
+  {
+    "registry": 441741,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 454075,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": "Corregir fallos"
+  },
+  {
+    "registry": 544361,
+    "id": "123456",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": ""
+  },
+  {
+    "registry": 308314,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 319442,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "2",
+    "nocturnalHoliday": 0,
+    "extrasHours": "2.00",
+    "observations": ""
+  },
+  {
+    "registry": 345474,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 358124,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "2",
+    "nocturnalHoliday": 0,
+    "extrasHours": "2.00",
+    "observations": "Trabajo adicional"
+  },
+  {
+    "registry": 407670,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 429521,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "2",
+    "nocturnalHoliday": 0,
+    "extrasHours": "2.00",
+    "observations": "Revisar fallos"
+  },
+  {
+    "registry": 539536,
+    "id": "123456",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 208173,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
+  },
+  {
+    "registry": 241370,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "2",
+    "nocturnalHoliday": 0,
+    "extrasHours": "2.00",
+    "observations": "Corregir fallos"
+  },
+  {
+    "registry": 605135,
+    "id": "123457",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 621715,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": "Corregir fallos"
+  },
+  {
+    "registry": 810201,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "0.00",
+    "observations": ""
+  },
+  {
+    "registry": 842293,
+    "id": "",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1.6",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.60",
+    "observations": "Revisar código"
+  },
+  {
+    "registry": 872295,
+    "id": "123459",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1.6",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.60",
+    "observations": "Revisar"
+  },
+  {
+    "registry": 931068,
+    "id": "123456",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": "1",
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": ""
+  }
 ]
