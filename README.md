@@ -11,7 +11,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 
 ## **Funcionalidades Principales**
 
-### 1. ### **Agregar Horas Extra**
+### 1. ###**Agregar Horas Extra**
    
 ##### **Perfil**: Administrador
 ##### **Acción**: Agregar nueva hora extra
