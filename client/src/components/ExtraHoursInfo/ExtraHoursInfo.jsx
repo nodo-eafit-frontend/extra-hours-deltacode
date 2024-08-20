@@ -1,21 +1,25 @@
-import { Input } from "antd";
+import { Input, Table } from "antd";
 import { useState } from "react";
 import "./ExtraHoursInfo.scss";
 const { Search } = Input;
 import { findExtraHour } from "@services/findExtraHour";
 
 export const ExtraHoursInfo = ({ onIdChange }) => {
-  const [extraHours, setExtraHour] = useState({});
+  const [extraHour, setExtraHour] = useState({});
   const [notFound, setNotFound] = useState();
 
   const onSearch = async (extraHourRegistry) => {
+    console.log("onSearch called with employeeId:", extraHourRegistry);
+
     try {
       const data = await findExtraHour(extraHourRegistry);
 
-      console.log("Datos obtenidos:", data);
-
       setExtraHour(data);
       setNotFound(false);
+      console.log(
+        "Calling onIdChange with extraHourRegistry:",
+        extraHourRegistry
+      );
       onIdChange(extraHourRegistry);
     } catch (error) {
       console.error(error);
@@ -24,32 +28,46 @@ export const ExtraHoursInfo = ({ onIdChange }) => {
     }
   };
 
-  const details = [
-    { title: "Registro", key: "registry" },
-    { title: "Fecha", key: "date" },
-    { title: "Diurna", key: "diurnal" },
-    { title: "Nocturna", key: "nocturnal" },
-    { title: "Diurna festiva", key: "diurnalHoliday" },
-    { title: "Nocturna festiva", key: "nocturnalHoliday" },
-    { title: "Horas extra totales", key: "extraHours" },
-    { title: "Observaciones", key: "observations" },
+  const columns = [
+    { title: "Registry", dataIndex: "registry", key: "registry" },
+    { title: "ID", dataIndex: "id", key: "id" },
+    { title: "Date", dataIndex: "date", key: "date" },
+    { title: "Diurnal", dataIndex: "diurnal", key: "diurnal" },
+    { title: "Nocturnal", dataIndex: "nocturnal", key: "nocturnal" },
+    {
+      title: "Diurnal Holiday",
+      dataIndex: "diurnalHoliday",
+      key: "diurnalHoliday",
+    },
+    {
+      title: "Nocturnal Holiday",
+      dataIndex: "nocturnalHoliday",
+      key: "nocturnalHoliday",
+    },
+    { title: "Extra Hours", dataIndex: "extraHours", key: "extraHours" },
+    { title: "Observations", dataIndex: "observations", key: "observations" },
   ];
+
+  const dataSource = Object.keys(extraHour).length ? [extraHour] : [];
 
   return (
     <div className="Info">
       <div className="search-container">
         <Search placeholder="Registro" onSearch={onSearch} />
-        {notFound && <span>Registro no encontrado, intente con otro</span>}
+        {notFound && (
+          <span>Registro no encontrado, intente con otra registro</span>
+        )}
       </div>
 
-      {extraHours && Object.keys(extraHours).length > 0 && (
+      {!!dataSource.length && (
         <div className="detailsInfo">
-          {details.map((item) => (
-            <div className="description-item" key={item.key}>
-              <div className="title">{item.title}</div>
-              <div className="description">{extraHours[item.key]}</div>
-            </div>
-          ))}
+          <Table
+            columns={columns}
+            dataSource={dataSource}
+            pagination={false}
+            rowKey="registry"
+            scroll={{ x: 900 }}
+          />
         </div>
       )}
     </div>

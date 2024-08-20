@@ -295,5 +295,27 @@
     "nocturnalHoliday": 0,
     "extrasHours": "1.00",
     "observations": ""
+  },
+  {
+    "registry": 700498,
+    "id": "123456",
+    "date": "2024-08-18",
+    "diurnal": 0,
+    "nocturnal": "1",
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": "1.00",
+    "observations": "trabajo adicional"
+  },
+  {
+    "registry": 252152,
+    "id": "123462",
+    "date": "2024-08-19",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": "1.3",
+    "extrasHours": "1.30",
+    "observations": ""
   }
 ]

@@ -13,7 +13,7 @@
 		"position": "Analista nivel 3",
 		"salary": 3246789,
 		"supervisor": "Carlos Miguel Pérez Sánchez",
-		"supervisorId": 2
+		"supervisorId": 1
 	},
 	{
 		"id": 123458,
@@ -56,7 +56,7 @@
         "supervisorId": 5
     },
     {
-        "id": 123462,
+        "id": 123463,
         "name": "Laura Marcela Ortiz Mejía",
         "position": "Especialista en marketing",
         "salary": 4678912,
@@ -64,7 +64,7 @@
         "supervisorId": 2
     },
     {
-        "id": 123460,
+        "id": 123464,
         "name": "Diego Alejandro Vargas Ríos",
         "position": "Consultor financiero",
         "salary": 6345678,
