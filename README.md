@@ -6,11 +6,13 @@ https://miro.com/app/board/uXjVKxUM7T8=/?moveToWidget=3458764597049633884&cot=14
  # **MANUAL DE USUSARIO**
  
 ##**Introducción**
+
 Este manual de usuario está diseñado para guiar a los administradores y gerentes en el uso del sistema de gestión de horas extra de Amadeus. El sistema permite agregar, actualizar, eliminar y aprobar registros de horas extra, así como generar informes detallados.
 
 ##**Funcionalidades Principales**
 
 1. ###**Agregar Horas Extra**
+   
 #####**Perfil**: Administrador
 #####**Acción**: Agregar nueva hora extra
 #####**Campos Requeridos:**
@@ -20,6 +22,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ####Observaciones
 
 2. ##**Actualizar Horas Extra**
+   
 #####**Perfil**: Administrador
 #####**Acción**: Actualizar hora extra existente
 #####**Campos Requeridos**:
@@ -28,7 +31,8 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 #####Fecha
 #####Observaciones
 
-3. ##**Eliminar Horas Extra**
+2. ##**Eliminar Horas Extra**
+
 #####**Perfil**: Administrador
 #####**Acción**: Eliminar hora extra existente
 #####**Campos Requeridos**:
@@ -38,6 +42,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 #####Seleccionar para eliminar
 
 4. ##**Aprobar Horas Extra**
+
 #####**Perfil**: Nómina
 #####**Acción**: Aprobar registros de horas extra
 #####**Campos Requeridos**:
@@ -45,6 +50,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 #####Seleccionar para aprobar
 
 5. ##**Generar Informes**
+   
 #####**Perfil**: Administrador
 #####**Acción**: Generar y descargar informes
 #####**Campos Requeridos**:
@@ -52,6 +58,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 #####Rango de fecha (Inicial y Final)
 
 6. ##**Configuración de Política de Horas Extra**
+ 
 #####**Perfil**: Jefes
 #####**Acción**: Configurar la política de horas extra
 #####**Campos Requeridos**:
@@ -62,6 +69,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 
 
 **##Perfiles Administrativos**
+
 Gerente
 **Sección Informes**: Genera y descarga informes.
 **Sección Actualizar**: Actualiza las horas extra existentes no pagadas.
