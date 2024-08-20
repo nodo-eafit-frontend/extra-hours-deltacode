@@ -11,7 +11,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 
 ## **Funcionalidades Principales**
 
-1. ### **Agregar Horas Extra**
+### 1. ### **Agregar Horas Extra**
    
 ##### **Perfil**: Administrador
 ##### **Acción**: Agregar nueva hora extra
@@ -21,7 +21,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 #### Tipo de hora extra (Diurna, Nocturna, Festiva Diurna, Festiva Nocturna)
 #### Observaciones
 
-2. ## **Actualizar Horas Extra**
+### 2. ## **Actualizar Horas Extra**
    
 ##### **Perfil**: Administrador
 ##### **Acción**: Actualizar hora extra existente
@@ -31,7 +31,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ##### Fecha
 ##### Observaciones
 
-2. ## **Eliminar Horas Extra**
+### 3. ## **Eliminar Horas Extra**
 
 ##### **Perfil**: Administrador
 ##### **Acción**: Eliminar hora extra existente
@@ -41,7 +41,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ##### Horas Extra
 ##### Seleccionar para eliminar
 
-4. ## **Aprobar Horas Extra**
+### 4. ## **Aprobar Horas Extra**
 
 ##### **Perfil**: Nómina
 ##### **Acción**: Aprobar registros de horas extra
@@ -49,7 +49,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ##### ID Empleado
 ##### Seleccionar para aprobar
 
-5. ## **Generar Informes**
+### 5. ## **Generar Informes**
    
 ##### **Perfil**: Administrador
 ##### **Acción**: Generar y descargar informes
@@ -57,7 +57,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ##### ID Empleado
 ##### Rango de fecha (Inicial y Final)
 
-6. ## **Configuración de Política de Horas Extra**
+### 6. ## **Configuración de Política de Horas Extra**
  
 ##### **Perfil**: Jefes
 ##### **Acción**: Configurar la política de horas extra
@@ -71,6 +71,7 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 ## **Perfiles Administrativos**
 
 Gerente
+
 **Sección Informes**: Genera y descarga informes.
 **Sección Actualizar**: Actualiza las horas extra existentes no pagadas.
 **Sección Agregar**: Agrega hora extra.
