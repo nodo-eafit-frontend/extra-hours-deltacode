@@ -1,5 +1,13 @@
+body {
+  background-image: url("/Users/marcelamolina/Documents/NODO/extra-hours-deltacode/client/src/assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
 .menu {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0 auto;
   max-width: 600px;
   display: grid;
