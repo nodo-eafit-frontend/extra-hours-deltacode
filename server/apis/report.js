@@ -2,8 +2,8 @@ const { readJsonFile } = require("../utils/json-reader");
 const path = require("path");
 require("dotenv").config();
 
-const JSON_DIR_EXTRAHOUR = process.env.JSON_DIR_EXTRAHOUR;
-const JSON_DIR_EMPLOYEE_INFO = process.env.JSON_DIR_EMPLOYEE_INFO;
+// const JSON_DIR_EXTRAHOUR = process.env.JSON_DIR_EXTRAHOUR;
+// const JSON_DIR_EMPLOYEE_INFO = process.env.JSON_DIR_EMPLOYEE_INFO;
 
 const getExportReport = async (request, response) => {
   try {
