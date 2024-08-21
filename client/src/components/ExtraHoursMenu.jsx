@@ -16,7 +16,9 @@ const ExtraHoursMenu = () => {
       <h1>Horas extra Amadeus</h1>
       <div className="grid">
         <div className="menu-item" onClick={() => navigate("/add")}>
-          <img src={Agregar} alt="Agregar" />
+          <div id="imgagregar">
+            <img src={Agregar} alt="Agregar" />
+            </div>
           <p>Agregar</p>
         </div>
         <div className="menu-item" onClick={() => navigate("/update")}>
