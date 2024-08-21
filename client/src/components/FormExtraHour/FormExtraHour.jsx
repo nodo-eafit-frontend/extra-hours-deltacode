@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { addExtraHour } from "@services/addExtraHour";
 import { EmployeeInfo } from "../EmployeeInfo/EmployeeInfo";
 import "./FormExtraHour.scss";
-import { findEmployee } from "../../services/findEmployee";
 
 export const FormExtraHour = () => {
   const [extraHours, setExtraHours] = useState({
@@ -24,7 +23,7 @@ export const FormExtraHour = () => {
   const handleIdChange = (id) => {
     console.log("handleIdChange called with id:", id);
     setExtraHours((prevData) => {
-      const updatedData = { ...prevData, id };
+      const updatedData = { ...prevData, id: parseInt(id, 10) };
       console.log("extraHours updated to:", updatedData);
       return updatedData;
     });
@@ -47,7 +46,7 @@ export const FormExtraHour = () => {
 
     setExtraHours((prevData) => ({
       ...prevData,
-      extrasHours: sumExtraHours.toFixed(2),
+      extrasHours: parseFloat(sumExtraHours.toFixed(2)),
     }));
   }, [
     extraHours.diurnal,
@@ -71,6 +70,8 @@ export const FormExtraHour = () => {
 
     try {
       await addExtraHour(body);
+
+      alert("Horas extras agregadas exitosamente");
 
       setExtraHours({
         registry: "",

@@ -12,7 +12,8 @@ export const EmployeeInfoWithExtraHours = () => {
 
   const onSearch = async (employeeId) => {
     try {
-      const data = await findEmployeeWithExtraHours(employeeId);
+      const numericEmployeeId = parseInt(employeeId, 10);
+      const data = await findEmployeeWithExtraHours(numericEmployeeId);
       setRecords(data);
     } catch (error) {
       console.error("Error fetching data:", error);

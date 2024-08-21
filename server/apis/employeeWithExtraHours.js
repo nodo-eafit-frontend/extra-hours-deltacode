@@ -2,7 +2,7 @@ const { readJsonFile } = require("../utils/json-reader");
 require("dotenv").config();
 
 const getEmployeeWithExtraHours = async (request, response) => {
-  const employeeId = request.params.id;
+  const employeeId = Number(request.params.id);
 
   try {
     const employeeInfo = await readJsonFile(process.env.JSON_DIR_EMPLOYEE_INFO);

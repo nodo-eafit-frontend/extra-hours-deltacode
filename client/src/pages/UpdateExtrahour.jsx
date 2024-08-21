@@ -1,6 +1,8 @@
 import React from "react";
 import "./UpdateExtrahour.scss";
 import { UpdateTable } from "../components/UpdateTable/UpdateTable";
+import { EmployeeInfoAndExtraHours } from "@components";
+import { ExtraHoursInfo } from "../components/ExtraHoursInfo/ExtraHoursInfo";
 
 const UpdateExtrahour = () => {
   return (
@@ -13,7 +15,9 @@ const UpdateExtrahour = () => {
       </header>
 
       <h2>Actualizar horas extra</h2>
-      <UpdateTable />
+      {/* <UpdateTable /> */}
+      {/* <EmployeeInfoAndExtraHours /> */}
+      <ExtraHoursInfo />
     </>
   );
 };
