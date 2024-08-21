@@ -2,9 +2,9 @@ form {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #010a41;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(231, 231, 243, 0.1);
 
   div {
     margin-bottom: 10px;
@@ -37,16 +37,16 @@ form {
       box-sizing: border-box;
 
       &:focus {
-        border-color: #007bff;
+        border-color: #ccc;
         outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        box-shadow: 0 0 5px #3A8BFF;
       }
     }
 
     textarea {
       width: 80%;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #3A8BFF;
       border-radius: 4px;
       font-size: 14px;
       box-sizing: border-box;
@@ -54,7 +54,7 @@ form {
       display: block;
 
       &:focus {
-        border-color: #007bff;
+        border-color: #3A8BFF;
         outline: none;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
       }
@@ -72,8 +72,8 @@ form {
     width: 50%;
     margin: 0 auto;
     padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: #ccc;
+    color: #3A8BFF;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
