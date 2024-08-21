@@ -1,6 +1,6 @@
 import React from "react";
-import { EmployeeInfoWithExtraHours } from "../components";
 import "./ReportsPage.scss";
+import { ReportInfo } from "../components/ReportInfo/ReportInfo";
 
 const Reports = () => {
   return (
@@ -11,9 +11,8 @@ const Reports = () => {
           {/* <h1 class="heading">Horas Extra Amadeus</h1> */}
         </a>
       </header>
-
       <h2>Informes</h2>
-      <EmployeeInfoWithExtraHours />
+      <ReportInfo />
     </>
   );
 };

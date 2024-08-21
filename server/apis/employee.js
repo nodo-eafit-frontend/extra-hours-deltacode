@@ -9,17 +9,17 @@ const getEmployee = async (request, response) => {
 
     employeeInfoJSON = await readJsonFile(process.env.JSON_DIR_EMPLOYEE_INFO);
 
-    const employyeFound = employeeInfoJSON.find((employee) => {
+    const employeeFound = employeeInfoJSON.find((employee) => {
       return employee.id === id;
     });
 
-    if (!employyeFound) {
+    if (!employeeFound) {
       throw new Error("Employee not Found");
     }
 
-    employyeFound.salary = formatCurrency(employyeFound.salary);
+    employeeFound.salary = formatCurrency(employeeFound.salary);
 
-    response.status(200).send(employyeFound);
+    response.status(200).send(employeeFound);
   } catch (error) {
     console.log(error);
 

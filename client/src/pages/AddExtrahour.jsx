@@ -12,7 +12,7 @@ const AddExtrahour = () => {
         </a>
       </header>
       <h2>Agregar horas extra</h2>
-      <FormExtraHour class="Form" />
+      <FormExtraHour />
     </>
   );
 };

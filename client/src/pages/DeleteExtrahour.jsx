@@ -1,6 +1,5 @@
 import React from "react";
 import "./DeleteExtrahour.scss";
-import { DeleteTable } from "../components/DeleteTable/DeleteTable";
 
 const DeleteExtrahour = () => {
   return (
@@ -13,7 +12,6 @@ const DeleteExtrahour = () => {
       </header>
 
       <h2>Eliminar horas extra</h2>
-      <DeleteTable />
     </>
   );
 };
