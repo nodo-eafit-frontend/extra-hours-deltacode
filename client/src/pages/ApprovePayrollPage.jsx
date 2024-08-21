@@ -1,7 +1,6 @@
 import React from "react";
 import "./ApprovePayrollPage.scss";
 import { ExtraHoursInfo } from "../components/ExtraHoursInfo/ExtraHoursInfo";
-import { EmployeeInfoAndExtraHours } from "../components/EmployeeInfoAndExtraHours/EmployeeInfoAndExtraHours";
 
 const ApproveExtrahour = () => {
   return (
@@ -15,7 +14,6 @@ const ApproveExtrahour = () => {
 
       <h1>Aprobar horas extra</h1>
       {/* <ExtraHoursInfo /> */}
-      <EmployeeInfoAndExtraHours />
     </>
   );
 };

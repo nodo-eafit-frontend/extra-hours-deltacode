@@ -27,6 +27,31 @@ const getExtrahours = async (request, response) => {
   }
 };
 
+const getExtrahoursById = async (request, response) => {
+  const { id } = request.params;
+
+  if (isNaN(id)) {
+    return response.status(400).json({ error: "Invalid registry parameter" });
+  }
+
+  try {
+    let extraHourJSON = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
+
+    const extraHourFound = extraHourJSON.find((extraHour) => {
+      return extraHour.id == id;
+    });
+
+    if (!extraHourFound) {
+      return response.status(404).json({ error: "ExtraHour not found" });
+    }
+
+    response.status(200).json(extraHourFound);
+  } catch (error) {
+    console.error("Error fetching extra hour:", error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 // Función para actualizar una hora extra existente
 const putExtrahours = async (request, response) => {
   const registry = Number(request.params.registry);
@@ -102,6 +127,7 @@ const postExtrahours = async (request, response) => {
 
 module.exports = {
   getExtrahours,
+  getExtrahoursById,
   putExtrahours,
   deleteExtrahours,
   postExtrahours,

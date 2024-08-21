@@ -1,15 +1,16 @@
-export const findExtraHour = async (registry) => {
+export const findExtraHour = async (identifier, type = "registry") => {
   try {
-    const response = await fetch(
-      `http://localhost:4000/extra-hour/${registry}`
-    );
+    const url =
+      type === "id"
+        ? `http://localhost:4000/extra-hour/id/${identifier}`
+        : `http://localhost:4000/extra-hour/${identifier}`;
 
+    const response = await fetch(url);
     const data = await response.json();
 
     return data;
   } catch (error) {
     console.error(error);
-
     throw error;
   }
 };

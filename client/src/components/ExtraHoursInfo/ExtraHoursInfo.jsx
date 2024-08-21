@@ -1,15 +1,15 @@
-import { Input, Table } from "antd";
+import { Input } from "antd";
 import { useState } from "react";
 import "./ExtraHoursInfo.scss";
 const { Search } = Input;
 import { findExtraHour } from "@services/findExtraHour";
 
-export const ExtraHoursInfo = ({ onRegistryChange }) => {
+export const ExtraHoursInfo = ({ onIdChange }) => {
   const [extraHour, setExtraHour] = useState({});
   const [notFound, setNotFound] = useState();
 
   const onSearch = async (extraHourRegistry) => {
-    console.log("onSearch called with employeeId:", extraHourRegistry);
+    console.log("onSearch called with extraHourRegistry:", extraHourRegistry);
 
     try {
       const data = await findExtraHour(extraHourRegistry);
@@ -20,7 +20,7 @@ export const ExtraHoursInfo = ({ onRegistryChange }) => {
         "Calling onIdChange with extraHourRegistry:",
         extraHourRegistry
       );
-      onRegistryChange(extraHourRegistry);
+      onIdChange(extraHourRegistry);
     } catch (error) {
       console.error(error);
       setNotFound(true);

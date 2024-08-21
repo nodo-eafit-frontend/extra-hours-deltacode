@@ -90,5 +90,16 @@
     "nocturnalHoliday": 0,
     "extrasHours": 1,
     "observations": "Ninguna"
+  },
+  {
+    "registry": 71050,
+    "id": 123458,
+    "date": "2024-08-21",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": "2.3",
+    "extrasHours": 2.3,
+    "observations": "Trabajos adicionales"
   }
 ]
