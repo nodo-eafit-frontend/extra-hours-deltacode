@@ -11,9 +11,8 @@ body {
   margin: 0 auto;
   max-width: 600px;
   display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  // gap: 20px;
-  // justify-items: center;
+  gap: 20px;
+  justify-items: center;
 }
 
 h1 {
@@ -23,27 +22,34 @@ h1 {
 }
 
 .grid {
-  background-color: #3A8BFF;
-  width: 170px;
-  height: 150px;
-  perspective: 1000px;
-  border-radius: 5%;
-  margin: auto;
+  //margin: auto;
+  //display: flex;
+  //flex-wrap: wrap;
+  //justify-content: center;
+  //gap: 20px;
+  //grid-template-columns: repeat(2, 1fr);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila */
+  justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+  gap: 10px; /* Espacio entre los elementos */
 }
 
 .menu-item {
   // text-align: center;
   cursor: pointer;
-  position: relative;
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  margin-bottom: 20px;
+  background-color: #3A8BFF;
+  width: 170px;
+  height: 150px;
+  perspective: 1000px;
+  border-radius: 5%;
+  //position: relative;
+  //display: inline-block;
+  //flex-direction: column;
+  //align-items: center;
+ // width: 100px;
+  //margin-bottom: 30px;
+  width: calc(33.33% - 10px); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
+  box-sizing: border-box;
 }
 
 .menu-item img {
