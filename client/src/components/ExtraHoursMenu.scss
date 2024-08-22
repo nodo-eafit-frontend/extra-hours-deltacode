@@ -1,10 +1,3 @@
-body {
-  background-image: url("/Users/marcelamolina/Documents/NODO/extra-hours-deltacode/client/src/assets/images/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-}
 .menu {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -22,11 +15,11 @@ h1 {
 }
 
 .grid {
-  //margin: auto;
-  //display: flex;
-  //flex-wrap: wrap;
-  //justify-content: center;
-  //gap: 20px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   //grid-template-columns: repeat(2, 1fr);
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila */
@@ -35,19 +28,19 @@ h1 {
 }
 
 .menu-item {
-  // text-align: center;
+  text-align: center;
   cursor: pointer;
   background-color: #3A8BFF;
   width: 170px;
   height: 150px;
   perspective: 1000px;
   border-radius: 5%;
-  //position: relative;
-  //display: inline-block;
-  //flex-direction: column;
-  //align-items: center;
- // width: 100px;
-  //margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  margin-bottom: 30px;
   width: calc(33.33% - 10px); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
   box-sizing: border-box;
 }
