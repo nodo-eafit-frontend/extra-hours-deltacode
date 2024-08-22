@@ -101,5 +101,49 @@
     "nocturnalHoliday": "2.3",
     "extrasHours": 2.3,
     "observations": "Trabajos adicionales"
+  },
+  {
+    "registry": 815632,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
+  },
+  {
+    "registry": 858218,
+    "id": 123456,
+    "date": "2024-08-22",
+    "diurnal": "1",
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 1,
+    "observations": ""
+  },
+  {
+    "registry": 920905,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
+  },
+  {
+    "registry": 940648,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
   }
 ]
