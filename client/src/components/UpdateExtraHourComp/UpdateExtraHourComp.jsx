@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { addExtraHour } from "@services/addExtraHour";
-import { EmployeeInfo } from "../EmployeeInfo/EmployeeInfo";
-import "./FormExtraHour.scss";
+import { findExtraHour } from "@services/findExtraHour";
+import { ExtraHoursInfo } from "../ExtraHoursInfo/ExtraHoursInfo";
+import "./UpdateExtraHourComp.scss";
 
-export const FormExtraHour = () => {
-  const [extraHours, setExtraHours] = useState({
+export const UpdateExtraHourComp = () => {
+  const [extraHour, setExtraHour] = useState({
     registry: "",
     id: "",
     date: "",
@@ -16,64 +16,63 @@ export const FormExtraHour = () => {
     observations: "",
   });
 
-  const [employee, setEmployee] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleIdChange = (id) => {
-    console.log("handleIdChange called with id:", id);
-    setExtraHours((prevData) => {
-      const updatedData = { ...prevData, id: parseInt(id, 10) };
-      console.log("extraHours updated to:", updatedData);
+  const handleIdChange = (registry) => {
+    console.log("handleIdChange called with registry:", registry);
+    setExtraHour((prevData) => {
+      const updatedData = { ...prevData, registry: parseInt(registry, 10) };
+      console.log("extraHour updated to:", updatedData);
       return updatedData;
     });
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setExtraHours((prevData) => ({
+    setExtraHour((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   useEffect(() => {
-    const { diurnal, nocturnal, diurnalHoliday, nocturnalHoliday } = extraHours;
+    const { diurnal, nocturnal, diurnalHoliday, nocturnalHoliday } = extraHour;
     const sumExtraHours =
       (parseFloat(diurnal, 10) || 0) +
       (parseFloat(nocturnal, 10) || 0) +
       (parseFloat(diurnalHoliday, 10) || 0) +
       (parseFloat(nocturnalHoliday, 10) || 0);
 
-    setExtraHours((prevData) => ({
+    setExtraHour((prevData) => ({
       ...prevData,
       extrasHours: parseFloat(sumExtraHours.toFixed(2)),
     }));
   }, [
-    extraHours.diurnal,
-    extraHours.nocturnal,
-    extraHours.diurnalHoliday,
-    extraHours.nocturnalHoliday,
+    extraHour.diurnal,
+    extraHour.nocturnal,
+    extraHour.diurnalHoliday,
+    extraHour.nocturnalHoliday,
   ]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form with extraHours:", extraHours);
+    console.log("Submitting form with extraHour:", extraHour);
     setLoading(true);
     setError(null);
 
-    const registry = Date.now() % 1_000_000;
-    const body = {
-      ...extraHours,
-      registry,
-    };
-    console.log("Datos enviados:", body);
+    // const registry = Date.now() % 1_000_000;
+    // const body = {
+    //   ...extraHour,
+    //   registry,
+    // };
+    // console.log("Datos enviados:", body);
 
     try {
-      await addExtraHour(body);
+      await findExtraHour(registry);
 
-      alert("Horas extras agregadas exitosamente");
+      alert("Horas extras actualizadas exitosamente");
 
-      setExtraHours({
+      setExtraHour({
         registry: "",
         id: "",
         date: "",
@@ -85,7 +84,7 @@ export const FormExtraHour = () => {
         observations: "",
       });
 
-      setEmployee({});
+      // setEmployee({});
     } catch (error) {
       setError(error.message);
     } finally {
@@ -95,14 +94,14 @@ export const FormExtraHour = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <EmployeeInfo onIdChange={handleIdChange} />
+      <ExtraHoursInfo onIdChange={handleIdChange} />
       <div>
         <label htmlFor="date"></label>
         <input
           type="date"
           id="date"
           name="date"
-          value={extraHours.date}
+          value={extraHour.date}
           onChange={handleChange}
         />
       </div>
@@ -111,7 +110,7 @@ export const FormExtraHour = () => {
         <input
           type="number"
           name="diurnal"
-          value={extraHours.diurnal}
+          value={extraHour.diurnal}
           onChange={handleChange}
           step="0.01"
         />
@@ -119,7 +118,7 @@ export const FormExtraHour = () => {
         <input
           type="number"
           name="nocturnal"
-          value={extraHours.nocturnal}
+          value={extraHour.nocturnal}
           onChange={handleChange}
           step="0.01"
         />
@@ -127,7 +126,7 @@ export const FormExtraHour = () => {
         <input
           type="number"
           name="diurnalHoliday"
-          value={extraHours.diurnalHoliday}
+          value={extraHour.diurnalHoliday}
           onChange={handleChange}
           step="0.01"
         />
@@ -135,7 +134,7 @@ export const FormExtraHour = () => {
         <input
           type="number"
           name="nocturnalHoliday"
-          value={extraHours.nocturnalHoliday}
+          value={extraHour.nocturnalHoliday}
           onChange={handleChange}
           step="0.01"
         />
@@ -143,7 +142,7 @@ export const FormExtraHour = () => {
         <input
           type="number"
           name="extrasHours"
-          value={extraHours.extrasHours}
+          value={extraHour.extrasHours}
           readOnly
         />
       </div>
@@ -152,12 +151,12 @@ export const FormExtraHour = () => {
         <textarea
           id="observations"
           name="observations"
-          value={extraHours.observations}
+          value={extraHour.observations}
           onChange={handleChange}
         />
       </div>
       <button type="submit" disabled={loading}>
-        {loading ? "Enviando..." : "Agregar"}
+        {loading ? "Enviando..." : "Actualizar"}
       </button>
       {error && <p>Error: {error}</p>}
     </form>

@@ -3,17 +3,58 @@ const { readJsonFile, updateJsonFile } = require("../utils/json-reader");
 
 // Función para obtener las horas extra
 const getExtrahours = async (request, response) => {
+  const { registry } = request.params;
+
+  if (isNaN(registry)) {
+    return response.status(400).json({ error: "Invalid registry parameter" });
+  }
+
   try {
-    const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
-    response.status(200).send(data);
+    let extraHourJSON = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
+
+    const extraHourFound = extraHourJSON.find((extraHour) => {
+      return extraHour.registry == registry;
+    });
+
+    if (!extraHourFound) {
+      return response.status(404).json({ error: "ExtraHour not found" });
+    }
+
+    response.status(200).json(extraHourFound);
   } catch (error) {
-    response.status(500).json({ message: "Error al obtener las horas extra" });
+    console.error("Error fetching extra hour:", error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+const getExtrahoursById = async (request, response) => {
+  const { id } = request.params;
+
+  if (isNaN(id)) {
+    return response.status(400).json({ error: "Invalid registry parameter" });
+  }
+
+  try {
+    let extraHourJSON = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
+
+    const extraHourFound = extraHourJSON.find((extraHour) => {
+      return extraHour.id == id;
+    });
+
+    if (!extraHourFound) {
+      return response.status(404).json({ error: "ExtraHour not found" });
+    }
+
+    response.status(200).json(extraHourFound);
+  } catch (error) {
+    console.error("Error fetching extra hour:", error);
+    response.status(500).json({ error: "Internal Server Error" });
   }
 };
 
 // Función para actualizar una hora extra existente
 const putExtrahours = async (request, response) => {
-  const { registry } = request.params;
+  const registry = Number(request.params.registry);
   const updateExtraHour = request.body;
 
   try {
@@ -34,7 +75,7 @@ const putExtrahours = async (request, response) => {
 
 //Función para eliminar una hora extra
 const deleteExtrahours = async (request, response) => {
-  const { registry } = request.params;
+  const registry = Number(request.params.registry);
 
   try {
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
@@ -86,6 +127,7 @@ const postExtrahours = async (request, response) => {
 
 module.exports = {
   getExtrahours,
+  getExtrahoursById,
   putExtrahours,
   deleteExtrahours,
   postExtrahours,

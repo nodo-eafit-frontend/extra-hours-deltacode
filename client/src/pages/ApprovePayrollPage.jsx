@@ -13,7 +13,7 @@ const ApproveExtrahour = () => {
       </header>
 
       <h1>Aprobar horas extra</h1>
-      <ExtraHoursInfo />
+      {/* <ExtraHoursInfo /> */}
     </>
   );
 };
