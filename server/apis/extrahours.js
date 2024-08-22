@@ -37,7 +37,7 @@ const getExtrahoursById = async (request, response) => {
   try {
     let extraHourJSON = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
 
-    const extraHourFound = extraHourJSON.find((extraHour) => {
+    const extraHourFound = extraHourJSON.filter((extraHour) => {
       return extraHour.id == id;
     });
 
