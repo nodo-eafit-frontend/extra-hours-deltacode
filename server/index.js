@@ -44,6 +44,36 @@ app.post("/extra-hour", (request, response) => {
   });
 });
 
+app.post("/employee-extra-hour", (request, response) => {
+  const InfonewExtraHour = request.body;
+
+  fs.readFile("extraHours.json", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error leyendo el archivo:", err);
+      return response.status(500).send("Error leyendo el archivo");
+    }
+
+    const InfoextraHours = JSON.parse(data);
+
+    InfoextraHours.push(InfonewExtraHour);
+
+    fs.writeFile(
+      "InfoextraHours.json",
+      JSON.stringify(InfoextraHours, null, 2),
+      (err) => {
+        if (err) {
+          console.error("Error escribiendo el archivo:", err);
+          return response.status(500).send("Error escribiendo el archivo");
+        }
+
+        response
+          .status(200)
+          .json({ message: "Registro agregado correctamente" });
+      }
+    );
+  });
+});
+
 app.listen(port, () => {
   console.log(`... ⚙️  Server Side listening on port ${port}`);
 });

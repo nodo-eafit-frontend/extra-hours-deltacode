@@ -18,7 +18,7 @@ const ExtraHoursMenu = () => {
         <div className="menu-item" onClick={() => navigate("/add")}>
           <div id="imgagregar">
             <img src={Agregar} alt="Agregar" />
-            </div>
+          </div>
           <p>Agregar</p>
         </div>
         <div className="menu-item" onClick={() => navigate("/update")}>

@@ -1,4 +1,5 @@
 import React from "react";
+import { UpdateAndDelete } from "../components/UpdateAndDelete/UpdateAndDelete";
 import "./DeleteExtrahour.scss";
 
 const DeleteExtrahour = () => {
@@ -10,8 +11,8 @@ const DeleteExtrahour = () => {
           {/* <h1 class="heading">Horas Extra Amadeus</h1> */}
         </a>
       </header>
-
       <h2>Eliminar horas extra</h2>
+      <UpdateAndDelete />
     </>
   );
 };

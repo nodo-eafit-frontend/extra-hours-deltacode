@@ -5,6 +5,7 @@ const {
   putExtrahours,
   deleteExtrahours,
   postExtrahours,
+  postExtraHourToJSON,
 } = require("../apis/extrahours");
 
 const { getEmployee } = require("../apis/employee");
@@ -24,6 +25,7 @@ router.get("/employee-info/:id", getEmployee);
 router.put("/extra-hour/:registry", putExtrahours);
 router.delete("/extra-hour/:registry", deleteExtrahours);
 router.post("/extra-hour", postExtrahours);
+router.post("/employee-extra-hour", postExtraHourToJSON);
 
 router.get(
   "/employeeWithExtraHours/:employeeId/extra-hour",

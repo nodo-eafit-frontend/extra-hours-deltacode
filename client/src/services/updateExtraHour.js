@@ -1,4 +1,4 @@
-export const updateExtraHour = async (body) => {
+export const updateExtraHour = async (registry, body) => {
   try {
     const options = {
       method: "PUT",
@@ -8,14 +8,21 @@ export const updateExtraHour = async (body) => {
       body: JSON.stringify(body),
     };
 
-    // console.log("Enviando datos:", body);
+    const response = await fetch(
+      `http://localhost:4000/extra-hour/${registry}`,
+      options
+    );
 
-    const response = await fetch(`http://localhost:4000/extra-hour`, options);
+    if (!response.ok) {
+      throw new Error(
+        `Error al actualizar la hora extra: ${response.statusText}`
+      );
+    }
+
     const data = await response.json();
-
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Error al actualizar la hora extra:", error);
 
     throw error;
   }
