@@ -69,6 +69,7 @@ const putExtrahours = async (request, response) => {
       response.status(404).json({ message: "Hora extra no encontrada" });
     }
   } catch (error) {
+    console.error("Error al actualizar la hora extra:", error);
     response.status(500).json({ message: "Error al actualizar la hora extra" });
   }
 };
@@ -79,7 +80,7 @@ const deleteExtrahours = async (request, response) => {
 
   try {
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
-    const filteredData = data.filter((item) => item.registry != registry);
+    const filteredData = data.filter((item) => item.registry !== registry);
 
     if (data.length !== filteredData.length) {
       await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, filteredData);
@@ -90,6 +91,7 @@ const deleteExtrahours = async (request, response) => {
       response.status(404).json({ message: "Hora extra no encontrada" });
     }
   } catch (error) {
+    console.error("Error al eliminar la hora extra:", error);
     response.status(500).json({ message: "Error al eliminar la hora extra" });
   }
 };
@@ -125,10 +127,35 @@ const postExtrahours = async (request, response) => {
   }
 };
 
+const postExtraHourToJSON = async (request, response) => {
+  try {
+    const { body } = request;
+
+    console.log("datos recibidos:", body);
+
+    const data = await readJsonFile(process.env.JSON_DIR_EMPLOYEE_EXTRAHOUR);
+
+    await updateJsonFile(process.env.JSON_DIR_EMPLOYEE_EXTRAHOUR, data);
+    data.push(body);
+    await updateJsonFile(process.env.JSON_DIR_EMPLOYEE_EXTRAHOUR, data);
+
+    response
+      .status(201)
+      .json({ message: "Información y horas extras agregadas correctamente" });
+  } catch (error) {
+    console.error(error);
+
+    response
+      .status(500)
+      .json({ message: "Error interno del seervidor", details: error.message });
+  }
+};
+
 module.exports = {
   getExtrahours,
   getExtrahoursById,
   putExtrahours,
   deleteExtrahours,
   postExtrahours,
+  postExtraHourToJSON,
 };

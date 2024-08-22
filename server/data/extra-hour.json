@@ -1,49 +1,13 @@
 [
   {
-    "registry": 586697,
-    "id": 123456,
-    "date": "2024-08-20",
-    "diurnal": 2,
-    "nocturnal": 0,
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 2,
-    "observations": "Revisión",
-    "extraHours": 2
-  },
-  {
-    "registry": 925049,
-    "id": 123456,
-    "date": "2024-08-20",
-    "diurnal": 2.5,
-    "nocturnal": 0,
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 2.5,
-    "observations": "Actualización",
-    "extraHours": 2.5
-  },
-  {
-    "registry": 770670,
-    "id": 123456,
-    "date": "2024-08-20",
-    "diurnal": 2.5,
-    "nocturnal": 0,
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 2.5,
-    "observations": "Revisión",
-    "extraHours": 2.5
-  },
-  {
     "registry": 974296,
     "id": 123456,
     "date": "2024-08-21",
     "diurnal": 0,
-    "nocturnal": "2",
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 2,
+    "nocturnal": 0,
+    "diurnalHoliday": 1,
+    "nocturnalHoliday": 3.7,
+    "extrasHours": 4.7,
     "observations": ""
   },
   {
@@ -103,7 +67,11 @@
     "observations": "Trabajos adicionales"
   },
   {
+<<<<<<< HEAD
     "registry": 815632,
+=======
+    "registry": 733359,
+>>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
     "id": "",
     "date": "",
     "diurnal": 0,
@@ -114,7 +82,11 @@
     "observations": ""
   },
   {
+<<<<<<< HEAD
     "registry": 858218,
+=======
+    "registry": 785590,
+>>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
     "id": 123456,
     "date": "2024-08-22",
     "diurnal": "1",
@@ -122,6 +94,7 @@
     "diurnalHoliday": 0,
     "nocturnalHoliday": 0,
     "extrasHours": 1,
+<<<<<<< HEAD
     "observations": ""
   },
   {
@@ -156,5 +129,8 @@
     "nocturnalHoliday": 0,
     "extrasHours": 0.02,
     "observations": ""
+=======
+    "observations": "Trabajo adicional"
+>>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
   }
 ]
