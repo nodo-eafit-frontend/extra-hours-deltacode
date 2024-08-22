@@ -2,6 +2,7 @@
 
 Wireframes
 https://miro.com/app/board/uXjVKxUM7T8=/?moveToWidget=3458764597049633884&cot=14
+https://www.figma.com/design/QdMm6JmxJ7tPx4XKkLhXLB/Extra-Hours-Delta?node-id=0-1&m=dev&t=o7T4U9zHz9zgULpy-1
 
  # **MANUAL DE USUSARIO**
  
