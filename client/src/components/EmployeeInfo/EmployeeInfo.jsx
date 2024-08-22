@@ -30,7 +30,7 @@ export const EmployeeInfo = ({ onIdChange }) => {
       <div className="search-container">
         <Search placeholder="Cédula" onSearch={onSearch} />
         {notFound && (
-          <span>Empleado no encontrado, intente con otra cédula</span>
+          <span id="textoerror">Empleado no encontrado, intente con otra cédula</span>
         )}
       </div>
 
