@@ -67,11 +67,7 @@
     "observations": "Trabajos adicionales"
   },
   {
-<<<<<<< HEAD
     "registry": 815632,
-=======
-    "registry": 733359,
->>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
     "id": "",
     "date": "",
     "diurnal": 0,
@@ -82,11 +78,7 @@
     "observations": ""
   },
   {
-<<<<<<< HEAD
     "registry": 858218,
-=======
-    "registry": 785590,
->>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
     "id": 123456,
     "date": "2024-08-22",
     "diurnal": "1",
@@ -94,7 +86,6 @@
     "diurnalHoliday": 0,
     "nocturnalHoliday": 0,
     "extrasHours": 1,
-<<<<<<< HEAD
     "observations": ""
   },
   {
@@ -129,8 +120,5 @@
     "nocturnalHoliday": 0,
     "extrasHours": 0.02,
     "observations": ""
-=======
-    "observations": "Trabajo adicional"
->>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
   }
 ]

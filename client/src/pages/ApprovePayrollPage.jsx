@@ -10,14 +10,9 @@ const ApproveExtrahour = () => {
           {/* <h1 class="heading">Horas Extra Amadeus</h1> */}
         </a>
       </header>
-<<<<<<< HEAD
 
       <h2>Aprobar horas extra</h2>
       {/* <ExtraHoursInfo /> */}
-=======
-      <h1>Aprobar horas extra</h1>
-      <Approve />
->>>>>>> 67f6b99f30101f6589ec60c8dc7260218539d1dd
     </>
   );
 };
