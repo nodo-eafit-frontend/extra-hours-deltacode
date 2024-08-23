@@ -1,11 +1,9 @@
-.menu {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0 auto;
-  max-width: 600px;
-  display: grid;
-  gap: 20px;
-  justify-items: center;
+body {
+  background-image: url("../assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
 h1 {
@@ -30,18 +28,21 @@ h1 {
 .menu-item {
   text-align: center;
   cursor: pointer;
-  background-color: #3A8BFF;
+  background-color: #3a8bff;
   width: 170px;
   height: 150px;
   perspective: 1000px;
   border-radius: 5%;
-  position: relative;
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  margin-bottom: 30px;
-  width: calc(33.33% - 10px); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
+
+  //position: relative;
+  //display: inline-block;
+  //flex-direction: column;
+  //align-items: center;
+  // width: 100px;
+  //margin-bottom: 30px;
+  width: calc(
+    33.33% - 10px
+  ); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
   box-sizing: border-box;
 }
 
@@ -51,3 +52,7 @@ h1 {
   margin-bottom: 10px;
 }
 
+// p {
+//   color: azure;
+//   padding: 10px 80px;
+// }

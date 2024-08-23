@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { Input, Table, Button, Modal, message } from "antd";
-import { findEmployee } from "@services/findEmployee";
-import { findExtraHour } from "@services/findExtraHour";
-import { postExtraHourToJSON } from "@services/postExtraHourToJSON";
-import { deleteExtraHour } from "../../services/deleteExtraHour";
-import "./Approve.scss";
+import { Input, Table, Button, message } from "antd";
+import { findEmployeeWithExtraHours } from "@services/findEmployeeWithExtraHours";
+import "./PayExtraHours.scss";
 
-export const Approve = () => {
+export const PayExtraHours = () => {
   const [employeeData, setEmployeeData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedRow, setSelectedRow] = useState(null);
 
   const handleSearch = async (idOrRegistry) => {
     const numericIdOrRegistry = parseInt(idOrRegistry, 10);
@@ -17,25 +15,12 @@ export const Approve = () => {
     setError(null);
 
     try {
-      const employee = await findEmployee(numericIdOrRegistry);
-      const extraHours = await findExtraHour(numericIdOrRegistry, "id");
+      const extraHours = await findEmployeeWithExtraHours(
+        numericIdOrRegistry,
+        "id"
+      );
 
-      if (!extraHours.length) {
-        const extraHourByRegistry = await findExtraHour(
-          numericIdOrRegistry,
-          "registry"
-        );
-        setEmployeeData(
-          extraHourByRegistry.map((extraHour) => ({
-            ...extraHour,
-            ...employee,
-          }))
-        );
-      } else {
-        setEmployeeData(
-          extraHours.map((extraHour) => ({ ...extraHour, ...employee }))
-        );
-      }
+      setEmployeeData(extraHours);
     } catch (error) {
       setError("No se encontraron datos para el ID ingresado.");
       setEmployeeData([]);
@@ -44,35 +29,33 @@ export const Approve = () => {
     }
   };
 
-  const handleApprove = async (record) => {
-    try {
-      const response = await postExtraHourToJSON(record);
+  const handlePay = (record) => {
+    setSelectedRow(record.registry);
 
-      console.log("Respuesta de la API:", response);
+    const salary = parseFloat(record.salary) || 0; // Asegúrate de que el salario es un número
+    const hourlyRate = salary / 240;
 
-      message.success("Registro aprobado exitosamente");
-    } catch (error) {
-      message.error("Error al aprobar el registro");
-    }
-  };
+    console.log("Salary:", salary, "Hourly Rate:", hourlyRate);
 
-  const handleDelete = (record) => {
-    Modal.confirm({
-      title: "¿Estás seguro que deseas eliminar este registro?",
-      onOk: async () => {
-        try {
-          await deleteExtraHour(record.registry);
+    const diurnal = parseFloat(record.diurnal) || 0;
+    const nocturnal = parseFloat(record.nocturnal) || 0;
+    const diurnalHoliday = parseFloat(record.diurnalHoliday) || 0;
+    const nocturnalHoliday = parseFloat(record.nocturnalHoliday) || 0;
 
-          setEmployeeData((prevData) =>
-            prevData.filter((item) => item.registry !== record.registry)
-          );
+    const totalHours =
+      hourlyRate * (diurnal * 1.25) +
+      hourlyRate * nocturnal * 1.75 +
+      hourlyRate * diurnalHoliday * 2 +
+      hourlyRate * nocturnalHoliday * 2.5;
 
-          message.success("Registro eliminado exitosamente");
-        } catch (error) {
-          message.error("Error al eliminar el registro");
-        }
-      },
-    });
+    console.log("Total Hours:", totalHours);
+
+    const payment = totalHours;
+    console.log("Payment:", payment);
+
+    message.info(
+      `El pago calculado para este registro es: $${payment.toFixed(2)}`
+    );
   };
 
   const columns = [
@@ -148,21 +131,22 @@ export const Approve = () => {
         <span>
           <Button
             type="link"
-            onClick={() => handleApprove(record)}
+            onClick={() => handlePay(record)}
             style={{ marginRight: 8 }}
           >
-            Aprobar
-          </Button>
-          <Button type="link" onClick={() => handleDelete(record)}>
-            Eliminar
+            Pagar
           </Button>
         </span>
       ),
     },
   ];
 
+  const rowClassName = (record) => {
+    return selectedRow === record.registry ? "selected-row" : "";
+  };
+
   return (
-    <div className="Approve">
+    <div className="PayExtraHours">
       <div className="search-container">
         <Input.Search
           placeholder="Ingrese ID del empleado"
@@ -185,6 +169,7 @@ export const Approve = () => {
               x: 900,
               y: 500,
             }}
+            rowClassName={rowClassName}
           />
         </div>
       )}
