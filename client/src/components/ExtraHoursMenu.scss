@@ -1,5 +1,5 @@
 body {
-  background-image: url("/Users/marcelamolina/Documents/NODO/extra-hours-deltacode/client/src/assets/images/background.png");
+  background-image: url("../assets/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +37,7 @@ h1 {
 .menu-item {
   // text-align: center;
   cursor: pointer;
-  background-color: #3A8BFF;
+  background-color: #3a8bff;
   width: 170px;
   height: 150px;
   perspective: 1000px;
@@ -46,9 +46,11 @@ h1 {
   //display: inline-block;
   //flex-direction: column;
   //align-items: center;
- // width: 100px;
+  // width: 100px;
   //margin-bottom: 30px;
-  width: calc(33.33% - 10px); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
+  width: calc(
+    33.33% - 10px
+  ); /* Cada div ocupará un tercio del ancho menos el espacio entre los elementos */
   box-sizing: border-box;
 }
 
@@ -58,3 +60,7 @@ h1 {
   margin-bottom: 10px;
 }
 
+// p {
+//   color: azure;
+//   padding: 10px 80px;
+// }

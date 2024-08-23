@@ -1,16 +1,5 @@
 [
   {
-    "registry": 974296,
-    "id": 123456,
-    "date": "2024-08-21",
-    "diurnal": 0,
-    "nocturnal": 0,
-    "diurnalHoliday": 1,
-    "nocturnalHoliday": 3.7,
-    "extrasHours": 4.7,
-    "observations": ""
-  },
-  {
     "registry": 4538,
     "id": 123460,
     "date": "2024-08-21",
@@ -31,17 +20,6 @@
     "nocturnalHoliday": 0,
     "extrasHours": 1.5,
     "observations": "Extra"
-  },
-  {
-    "registry": 993002,
-    "id": 123456,
-    "date": "2024-08-21",
-    "diurnal": "2.6",
-    "nocturnal": 0,
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 2.6,
-    "observations": "Trabajo adicional"
   },
   {},
   {
@@ -87,5 +65,16 @@
     "nocturnalHoliday": 0,
     "extrasHours": 1,
     "observations": "Trabajo adicional"
+  },
+  {
+    "registry": 853254,
+    "id": 123456,
+    "date": "2024-08-22",
+    "diurnal": 0,
+    "nocturnal": "1.5",
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 1.5,
+    "observations": "Reviones trabajos"
   }
 ]

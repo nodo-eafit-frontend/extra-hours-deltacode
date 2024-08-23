@@ -1,7 +1,8 @@
 import React from "react";
-import "./ApprovePayrollPage.scss";
-import { Approve } from "../components/Approve/Approve";
-const ApproveExtrahour = () => {
+import "./PayExtraHoursPage.scss";
+import { PayExtraHours } from "../components/PayExtraHours/PayExtraHours";
+
+const PayExtraHoursPage = () => {
   return (
     <>
       <header className="page__header">
@@ -10,10 +11,11 @@ const ApproveExtrahour = () => {
           {/* <h1 class="heading">Horas Extra Amadeus</h1> */}
         </a>
       </header>
-      <h1>Aprobar horas extra</h1>
-      <Approve />
+
+      <h2>Pagar horas extra</h2>
+      <PayExtraHours />
     </>
   );
 };
 
-export default ApproveExtrahour;
+export default PayExtraHoursPage;

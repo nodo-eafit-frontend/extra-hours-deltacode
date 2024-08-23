@@ -21,25 +21,25 @@ const ExtraHoursMenu = () => {
           </div>
           <p>Agregar</p>
         </div>
-        <div className="menu-item" onClick={() => navigate("/update")}>
-          <img src={Actualizar} alt="Actualizar" />
-          <p>Actualizar</p>
+        <div className="menu-item" onClick={() => navigate("/delete")}>
+          <img src={Eliminar} alt="Eliminar" />
+          <p>Actualizar - Eliminar</p>
         </div>
         <div className="menu-item" onClick={() => navigate("/reports")}>
           <img src={Informes} alt="Informes" />
           <p>Informes</p>
         </div>
-        <div className="menu-item" onClick={() => navigate("/delete")}>
-          <img src={Eliminar} alt="Eliminar" />
-          <p>Eliminar</p>
+        <div className="menu-item" onClick={() => navigate("/approve-payroll")}>
+          <img src={NominaAprobar} alt="Nómina - Aprobar" />
+          <p>Nómina - Aprobar</p>
+        </div>
+        <div className="menu-item" onClick={() => navigate("/update")}>
+          <img src={Actualizar} alt="Actualizar" />
+          <p>Pagar</p>
         </div>
         <div className="menu-item" onClick={() => navigate("/settings")}>
           <img src={Configuracion} alt="Configuración" />
           <p>Configuración</p>
-        </div>
-        <div className="menu-item" onClick={() => navigate("/approve-payroll")}>
-          <img src={NominaAprobar} alt="Nómina - Aprobar" />
-          <p>Nómina - Aprobar</p>
         </div>
       </div>
     </div>
