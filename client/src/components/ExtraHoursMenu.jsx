@@ -33,7 +33,7 @@ const ExtraHoursMenu = () => {
           </div>
           <div className="menu-item" onClick={() => navigate("/update")}>
             <img src={Actualizar} alt="Actualizar" />
-            <p>Actualizar</p>
+            <p>Pagar</p>
           </div>
           <div className="menu-item" onClick={() => navigate("/reports")}>
             <img src={Informes} alt="Informes" />
@@ -41,7 +41,7 @@ const ExtraHoursMenu = () => {
           </div>
           <div className="menu-item" onClick={() => navigate("/delete")}>
             <img src={Eliminar} alt="Eliminar" />
-            <p>Eliminar</p>
+            <p>Actualizar - Eliminar</p>
           </div>
           <div className="menu-item" onClick={() => navigate("/settings")}>
             <img src={Configuracion} alt="Configuración" />
