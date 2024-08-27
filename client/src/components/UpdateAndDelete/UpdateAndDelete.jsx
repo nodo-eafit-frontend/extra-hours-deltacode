@@ -80,11 +80,15 @@ export const UpdateAndDelete = () => {
 
       const updatedValues = {
         ...values,
+        diurnal: Number(values.diurnal),
+        nocturnal: Number(values.nocturnal),
+        diurnalHoliday: Number(values.diurnalHoliday),
+        nocturnalHoliday: Number(values.nocturnalHoliday),
         extrasHours:
-          values.diurnal +
-          values.nocturnal +
-          values.diurnalHoliday +
-          values.nocturnalHoliday,
+          Number(values.diurnal) +
+          Number(values.nocturnal) +
+          Number(values.diurnalHoliday) +
+          Number(values.nocturnalHoliday),
       };
 
       console.log("Datos a actualizar:", updatedValues);

@@ -11,7 +11,7 @@
     "observations": "",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   },
@@ -19,7 +19,7 @@
     "registry": 570508,
     "id": 123456,
     "date": "2024-08-21",
-    "diurnal": "1.5",
+    "diurnal": 1.5,
     "nocturnal": 0,
     "diurnalHoliday": 0,
     "nocturnalHoliday": 0,
@@ -27,7 +27,7 @@
     "observations": "Extra",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   },
@@ -43,7 +43,7 @@
     "observations": "",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   },
@@ -59,7 +59,7 @@
     "observations": "",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   },
@@ -67,7 +67,7 @@
     "registry": 993002,
     "id": 123456,
     "date": "2024-08-21",
-    "diurnal": "2.6",
+    "diurnal": 2.6,
     "nocturnal": 0,
     "diurnalHoliday": 0,
     "nocturnalHoliday": 0,
@@ -75,7 +75,7 @@
     "observations": "Trabajo adicional",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   },
@@ -83,7 +83,7 @@
     "registry": 570508,
     "id": 123456,
     "date": "2024-08-21",
-    "diurnal": "1.5",
+    "diurnal": 1.5,
     "nocturnal": 0,
     "diurnalHoliday": 0,
     "nocturnalHoliday": 0,
@@ -91,7 +91,7 @@
     "observations": "Extra",
     "name": "Ana María García López",
     "position": "Analista nivel 2",
-    "salary": "$3'246'789",
+    "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
   }
