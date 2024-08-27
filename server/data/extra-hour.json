@@ -109,5 +109,16 @@
     "nocturnalHoliday": 0,
     "extrasHours": 0.02,
     "observations": ""
+  },
+  {
+    "registry": 203340,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
   }
 ]

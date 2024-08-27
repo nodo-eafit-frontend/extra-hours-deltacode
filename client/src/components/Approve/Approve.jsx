@@ -46,7 +46,17 @@ export const Approve = () => {
 
   const handleApprove = async (record) => {
     try {
-      const response = await postExtraHourToJSON(record);
+      const updatedRecord = {
+        ...record,
+        salary: Number(record.salary),
+        diurnal: Number(record.diurnal),
+        nocturnal: Number(record.nocturnal),
+        diurnalHoliday: Number(record.diurnalHoliday),
+        nocturnalHoliday: Number(record.nocturnalHoliday),
+        extrasHours: Number(record.extrasHours),
+      };
+
+      const response = await postExtraHourToJSON(updatedRecord);
 
       console.log("Respuesta de la API:", response);
 
