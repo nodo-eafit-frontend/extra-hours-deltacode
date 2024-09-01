@@ -243,43 +243,47 @@ export const UpdateAndDelete = () => {
 
       {isModalVisible && (
         <Modal
-          title="Actualizar Registro"
           open={isModalVisible}
           onCancel={() => setIsModalVisible(false)}
           footer={null}
         >
-          <Form
-            initialValues={selectedRow}
-            onFinish={handleSave}
-            onValuesChange={handleFormChange}
-          >
-            <Form.Item name="diurnal" label="Diurnas">
-              <InputNumber />
-            </Form.Item>
-            <Form.Item name="nocturnal" label="Nocturnas">
-              <InputNumber />
-            </Form.Item>
-            <Form.Item name="diurnalHoliday" label="Diurnas Festivas">
-              <InputNumber />
-            </Form.Item>
-            <Form.Item name="nocturnalHoliday" label="Nocturnas Festivas">
-              <InputNumber />
-            </Form.Item>
-            <Form.Item name="extrasHours" label="Total Horas Extras">
-              <InputNumber value={selectedRow?.extrasHours} disabled />
-            </Form.Item>
-            <Form.Item name="date" label="Date">
-              <Input />
-            </Form.Item>
-            <Form.Item name="observations" label="Observaciones">
-              <Input />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Guardar
-              </Button>
-            </Form.Item>
-          </Form>
+          <div className="modal__container">
+            <header>
+              <h2>Actualizar registro</h2>
+            </header>
+            <Form
+              initialValues={selectedRow}
+              onFinish={handleSave}
+              onValuesChange={handleFormChange}
+            >
+              <Form.Item name="diurnal" label="Diurnas">
+                <InputNumber />
+              </Form.Item>
+              <Form.Item name="nocturnal" label="Nocturnas">
+                <InputNumber />
+              </Form.Item>
+              <Form.Item name="diurnalHoliday" label="Diurnas Festivas">
+                <InputNumber />
+              </Form.Item>
+              <Form.Item name="nocturnalHoliday" label="Nocturnas Festivas">
+                <InputNumber />
+              </Form.Item>
+              <Form.Item name="extrasHours" label="Total Horas Extras">
+                <InputNumber value={selectedRow?.extrasHours} disabled />
+              </Form.Item>
+              <Form.Item name="date" label="Date">
+                <Input />
+              </Form.Item>
+              <Form.Item name="observations" label="Observaciones">
+                <Input />
+              </Form.Item>
+              <Form.Item>
+                <Button className="button" type="primary" htmlType="submit">
+                  Guardar
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
         </Modal>
       )}
     </div>
