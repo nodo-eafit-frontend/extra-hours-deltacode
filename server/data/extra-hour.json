@@ -120,5 +120,27 @@
     "nocturnalHoliday": 0,
     "extrasHours": 0,
     "observations": ""
+  },
+  {
+    "registry": 579753,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
+  },
+  {
+    "registry": 588720,
+    "id": "",
+    "date": "",
+    "diurnal": 0,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 0,
+    "observations": ""
   }
 ]
