@@ -10,17 +10,6 @@
     "extrasHours": 3.5,
     "observations": "Server"
   },
-  {
-    "registry": 570508,
-    "id": 123456,
-    "date": "2024-08-21",
-    "diurnal": "1.5",
-    "nocturnal": 0,
-    "diurnalHoliday": 0,
-    "nocturnalHoliday": 0,
-    "extrasHours": 1.5,
-    "observations": "Extra"
-  },
   {},
   {
     "registry": 934206,

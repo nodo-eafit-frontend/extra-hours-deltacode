@@ -94,5 +94,21 @@
     "salary": 3246789,
     "supervisor": "Carlos Miguel Pérez Sánchez",
     "supervisorId": 1
+  },
+  {
+    "registry": 570508,
+    "id": 123456,
+    "date": "2024-08-21",
+    "diurnal": 1.5,
+    "nocturnal": 0,
+    "diurnalHoliday": 0,
+    "nocturnalHoliday": 0,
+    "extrasHours": 1.5,
+    "observations": "Extra",
+    "name": "Ana María García López",
+    "position": "Analista nivel 2",
+    "salary": null,
+    "supervisor": "Carlos Miguel Pérez Sánchez",
+    "supervisorId": 1
   }
 ]

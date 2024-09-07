@@ -1,42 +1,56 @@
 import React, { useState } from "react";
-import { Input, Table } from "antd";
+import { Input, Table, DatePicker } from "antd";
 import { findEmployee } from "@services/findEmployee";
 import { findExtraHour } from "@services/findExtraHour";
+import { findExtraHourByDateRange } from "@services/findExtraHourByDateRange";
 import ExcelJS from "exceljs";
 import "./ReportInfo.scss";
+
+const { RangePicker } = DatePicker;
 
 export const ReportInfo = () => {
   const [employeeData, setEmployeeData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedRange, setSelectedRange] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
-  const handleSearch = async (idOrRegistry) => {
-    const numericIdOrRegistry = parseInt(idOrRegistry, 10);
+  const handleSearch = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const employee = await findEmployee(numericIdOrRegistry);
-      const extraHours = await findExtraHour(numericIdOrRegistry, "id");
+      let employee = {};
+      let extraHours = [];
 
-      if (!extraHours.length) {
-        const extraHourByRegistry = await findExtraHour(
-          numericIdOrRegistry,
-          "registry"
+      if (searchValue) {
+        const numericIdOrRegistry = parseInt(searchValue, 10);
+        employee = await findEmployee(numericIdOrRegistry);
+
+        extraHours = await findExtraHour(numericIdOrRegistry, "id");
+        if (!extraHours.length) {
+          extraHours = await findExtraHour(numericIdOrRegistry, "registry");
+        }
+      } else if (selectedRange.length === 2) {
+        const [startDate, endDate] = selectedRange;
+        extraHours = await findExtraHourByDateRange(
+          startDate.format("YYYY-MM-DD"),
+          endDate.format("YYYY-MM-DD")
         );
-        setEmployeeData(
-          extraHourByRegistry.map((extraHour) => ({
-            ...employee,
-            ...extraHour,
-          }))
-        );
-      } else {
+      }
+
+      if (extraHours.length > 0) {
         setEmployeeData(
           extraHours.map((extraHour) => ({ ...employee, ...extraHour }))
         );
+      } else {
+        setError(
+          "No se encontraron datos para los criterios de búsqueda proporcionados."
+        );
+        setEmployeeData([]);
       }
     } catch (error) {
-      setError("No se encontraron datos para el ID ingresado.");
+      setError("Error al buscar los datos. Por favor, intente nuevamente.");
       setEmployeeData([]);
     } finally {
       setLoading(false);
@@ -164,13 +178,24 @@ export const ReportInfo = () => {
 
   return (
     <div className="ReportInfo">
-      <div className="search-container">
-        <Input.Search
-          placeholder="Ingrese ID del empleado"
-          onSearch={handleSearch}
-        />
-        {error && <p className="error-message">{error}</p>}
+      <div className="filters-container">
+        <div className="search-container">
+          <Input.Search
+            placeholder="Ingrese ID del empleado"
+            onSearch={handleSearch}
+            onChange={(e) => setSearchValue(e.target.value)}
+            value={searchValue}
+          />
+        </div>
+        <div className="range-picker-container">
+          <RangePicker onChange={(dates) => setSelectedRange(dates)} />
+          <button onClick={handleSearch} style={{ marginLeft: 10 }}>
+            Buscar
+          </button>
+        </div>
       </div>
+
+      {error && <p className="error-message">{error}</p>}
 
       {loading && <p>Cargando datos...</p>}
 
