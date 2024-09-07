@@ -2,6 +2,7 @@ const express = require("express");
 const {
   getExtrahours,
   getExtrahoursById,
+  getExtrahoursByDateRange,
   putExtrahours,
   deleteExtrahours,
   postExtrahours,
@@ -17,8 +18,7 @@ const router = express.Router();
 router.get("/extra-hour/registry/:registry", getExtrahours);
 router.get("/extra-hour/id/:id", getExtrahoursById);
 
-// router.get("/extra-hour/registry/:registry", getExtrahoursByRegistry);
-// router.get("/extra-hour/id/:id", getExtrahoursById);
+router.get("/extra-hour", getExtrahoursByDateRange);
 
 router.get("/employee-info/:id", getEmployee);
 router.put("/extra-hour/:registry", putExtrahours);

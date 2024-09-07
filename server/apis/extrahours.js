@@ -1,6 +1,53 @@
 require("dotenv").config();
 const { readJsonFile, updateJsonFile } = require("../utils/json-reader");
 
+// Función para obtener las horas extra por rango de fechas
+const getExtrahoursByDateRange = async (request, response) => {
+  const { startDate, endDate } = request.query;
+
+  if (!startDate || !endDate) {
+    return response
+      .status(400)
+      .json({ error: "Missing date range parameters" });
+  }
+
+  try {
+    const extraHourJSON = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
+    const employeeJSON = await readJsonFile(process.env.JSON_DIR_EMPLOYEE_INFO);
+
+    // Filtra las horas extra que estén dentro del rango de fechas
+    const filteredExtraHours = extraHourJSON.filter((extraHour) => {
+      const extraHourDate = new Date(extraHour.date);
+      return (
+        extraHourDate >= new Date(startDate) &&
+        extraHourDate <= new Date(endDate)
+      );
+    });
+
+    if (filteredExtraHours.length === 0) {
+      return response
+        .status(404)
+        .json({ error: "No extra hours found in the specified date range" });
+    }
+
+    const results = filteredExtraHours.map((extraHour) => {
+      const employee = employeeJSON.find((emp) => emp.id === extraHour.id);
+      return {
+        ...extraHour,
+        name: employee ? employee.name : "Unknown",
+        position: employee ? employee.position : "Unknown",
+        salary: employee ? employee.salary : "Unknown",
+        supervisor: employee ? employee.supervisor : "Unknown",
+      };
+    });
+
+    response.status(200).json(results);
+  } catch (error) {
+    console.error("Error fetching extra hours by date range:", error);
+    response.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 // Función para obtener las horas extra
 const getExtrahours = async (request, response) => {
   const { registry } = request.params;
@@ -103,12 +150,6 @@ const postExtrahours = async (request, response) => {
 
     console.log("datos recibidos:", body);
 
-    // if (!body.id || !body.date || !body.extraHours) {
-    //   return response
-    //     .status(400)
-    //     .json({ message: "Campos requeridos faltantes" });
-    // }
-
     const data = await readJsonFile(process.env.JSON_DIR_EXTRAHOUR);
 
     await updateJsonFile(process.env.JSON_DIR_EXTRAHOUR, data);
@@ -154,6 +195,7 @@ const postExtraHourToJSON = async (request, response) => {
 module.exports = {
   getExtrahours,
   getExtrahoursById,
+  getExtrahoursByDateRange,
   putExtrahours,
   deleteExtrahours,
   postExtrahours,
