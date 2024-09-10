@@ -97,12 +97,15 @@ npm run serve
 **Gerente**
 
 **Sección Informes**: Genera y descarga informes.
+
 **Sección Actualiza y Eliminar**: Actualiza o elimina las horas extra existentes no pagadas.
+
 **Sección Agregar**: Agrega hora extra.
 
 **Nómina**
 
 **Sección Aprobar**: Aprueba los registros de horas extra.
+
 **Sección Pagar**: Paga los registros de horas extra aprobados.
 
 ## **Conclusión**
