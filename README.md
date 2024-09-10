@@ -10,7 +10,7 @@ https://www.figma.com/design/QdMm6JmxJ7tPx4XKkLhXLB/Extra-Hours-Delta?node-id=0-
 
 Este manual de usuario está diseñado para guiar a los administradores y gerentes en el uso del sistema de gestión de horas extra. El sistema permite agregar horas extra, actualizar y eliminar, aprobar y pagar horas extra, así como generar informes detallados.
 
-##**Requisitos**
+## **Requisitos**
 
 Antes de ejecutar la aplicación, asegurate de tener instalados:
 
@@ -25,13 +25,13 @@ Instala las dependencias tanto en la carpeta client como en la carpeta server:
 *exceljs: para generar y manipular archivos Excel.
 *express: un framework minimalista para el servidor backend.
 
-##**Ejecuta el proyecto**
+## **Ejecuta el proyecto**
 
-###**Cliente:** Desde la carpeta client, ejecuta el siguiente comando para iniciar el servidor de desarrollo del frontend:
+### **Cliente:** Desde la carpeta client, ejecuta el siguiente comando para iniciar el servidor de desarrollo del frontend:
 
 npm run dev
 
-###**Servidor:** Desde la carpeta server, ejecuta el siguiente comando para iniciar el servidor backend:
+### **Servidor:** Desde la carpeta server, ejecuta el siguiente comando para iniciar el servidor backend:
 
 npm run serve
 
@@ -65,7 +65,7 @@ npm run serve
 ##### ID Empleado
 ##### Gestiona el registro a aprobar desde el botón correspondiente.
 
-## 3.  **Pagar Horas Extra**
+## 4.  **Pagar Horas Extra**
 
 ##### **Perfil**: Nómina
 ##### **Acción**: Pagar registros de horas extra aprobados.
@@ -73,7 +73,7 @@ npm run serve
 ##### ID Empleado
 ##### Gestiona el pago desde el botón correspondiente al registro a pagar.
 
-## 4. **Generar Informes**
+## 5. **Generar Informes**
    
 ##### **Perfil**: Administrador
 ##### **Acción**: Generar y descargar informes
@@ -81,7 +81,7 @@ npm run serve
 ##### ID Empleado para generar reportes por empleado
 ##### Rango de fecha (Inicial y Final), para generar reportes de todos los registros abarcados en las fechas ingresadas.
 
-## 5.  **Configuración de Política de Horas Extra**
+## 6.  **Configuración de Política de Horas Extra**
  
 ##### **Perfil**: Jefes
 ##### **Acción**: Configurar la política de horas extra
