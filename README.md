@@ -14,16 +14,16 @@ Este manual de usuario está diseñado para guiar a los administradores y gerent
 
 Antes de ejecutar la aplicación, asegurate de tener instalados:
 
-*Node.js
-*npm
++ Node.js
++ npm
 
 Instala las dependencias tanto en la carpeta client como en la carpeta server:
 
-*npm install
-*cors: para habilitar el intercambio de recursos de orígenes cruzados (CORS).
-*dotenv: para gestionar variables de entorno.
-*exceljs: para generar y manipular archivos Excel.
-*express: un framework minimalista para el servidor backend.
++ npm install
++ cors: para habilitar el intercambio de recursos de orígenes cruzados (CORS).
++ dotenv: para gestionar variables de entorno.
++ exceljs: para generar y manipular archivos Excel.
++ express: un framework minimalista para el servidor backend.
 
 ## **Ejecuta el proyecto**
 
